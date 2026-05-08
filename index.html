@@ -1302,10 +1302,10 @@ async function generateQuestions() {
     try {
       generated = JSON.parse(rawQ);
     } catch(e) {
-      throw new Error('Question generation returned invalid JSON. Please try again.');
+      throw new Error('RAW RESPONSE WAS: ' + rawQ.substring(0, 800));
     }
     if (!Array.isArray(generated) || generated.length === 0) {
-      throw new Error('Unexpected response format from generation. Please try again.');
+      throw new Error('Not an array. RAW: ' + rawQ.substring(0, 400));
     }
 
     // ── PASS 2: Verify ──
