@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Neha's AP Precalculus Practice</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="katexReady=true"></script>
+<style>
+  :root {
+    --bg: #faf9f7;
+    --surface: #ffffff;
+    --surface2: #f4f2ee;
+    --border: #e8e4dc;
+    --border2: #d4cfc5;
+    --text: #1a1814;
+    --text2: #5a564f;
+    --text3: #9a958c;
+    --accent: #2d5a3d;
+    --accent-light: #eef5f1;
+    --accent-border: #b8d4c2;
+    --gold: #b5860d;
+    --gold-light: #fdf8ec;
+    --gold-border: #e8d5a0;
+    --red: #c0392b;
+    --red-light: #fdf0ee;
+    --red-border: #f0c4be;
+    --blue: #1a5f8a;
+    --blue-light: #eef4fa;
+    --blue-border: #b8d4ea;
+    --radius: 10px;
+    --font-head: 'Lora', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* ── Header ── */
+  .header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .header h1 {
+    font-family: var(--font-head);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+  .header h1 span { color: var(--accent); }
+  .header p {
+    font-size: 0.85rem;
+    color: var(--text3);
+    margin-top: 4px;
+  }
+
+  /* ── API Key Setup ── */
+  .apikey-banner {
+    background: var(--blue-light);
+    border: 1px solid var(--blue-border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .apikey-banner p {
+    font-size: 0.82rem;
+    color: var(--blue);
+    flex: 1;
+    min-width: 200px;
+  }
+  .apikey-banner p strong { display: block; margin-bottom: 2px; font-size: 0.85rem; }
+  .apikey-input-row { display: flex; gap: 8px; align-items: center; width: 100%; margin-top: 8px; }
+  .apikey-input {
+    flex: 1;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    padding: 7px 12px;
+    border-radius: 99px;
+    border: 1px solid var(--blue-border);
+    background: white;
+    color: var(--text);
+    outline: none;
+  }
+  .apikey-input:focus { border-color: var(--blue); }
+  .apikey-save-btn {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 99px;
+    border: none;
+    background: var(--blue);
+    color: white;
+    cursor: pointer;
+  }
+  .apikey-set-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 6px;
+  }
+  .apikey-set-row span {
+    font-size: 0.82rem;
+    color: var(--blue);
+    flex: 1;
+  }
+  .apikey-change-btn {
+    font-size: 0.78rem;
+    color: var(--text3);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: var(--font-body);
+  }
+
+  /* ── Controls ── */
+  .controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .unit-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+  .ubtn {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 99px;
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    color: var(--text2);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .ubtn:hover { background: var(--surface2); }
+  .ubtn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  .diff-select, .count-select {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    border-radius: 99px;
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    color: var(--text2);
+    cursor: pointer;
+    outline: none;
+  }
+
+  .gen-btn {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 22px;
+    border-radius: 99px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .gen-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+  .gen-btn:active { transform: translateY(0); }
+  .gen-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  /* ── Manage Units toggle ── */
+  .manage-toggle {
+    font-size: 0.78rem;
+    color: var(--text3);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+    padding: 0;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.15s;
+  }
+  .manage-toggle:hover { color: var(--accent); }
+  .manage-toggle .arrow { font-size: 0.65rem; transition: transform 0.2s; }
+  .manage-toggle.open .arrow { transform: rotate(90deg); }
+
+  /* ── Manage Units Panel ── */
+  .manage-panel {
+    display: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .manage-panel.open { display: block; }
+
+  .manage-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+  .manage-panel-header h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text2);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .reset-btn {
+    font-size: 0.75rem;
+    color: var(--red);
+    background: none;
+    border: 1px solid var(--red-border);
+    border-radius: 99px;
+    padding: 3px 10px;
+    cursor: pointer;
+    font-family: var(--font-body);
+  }
+  .reset-btn:hover { background: var(--red-light); }
+
+  .unit-card {
+    border-bottom: 1px solid var(--border);
+    padding: 14px 16px;
+  }
+  .unit-card:last-child { border-bottom: none; }
+
+  .unit-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .unit-card-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .unit-card-sub {
+    font-size: 0.78rem;
+    color: var(--text3);
+    margin-top: 2px;
+    line-height: 1.5;
+  }
+  .unit-card-actions { display: flex; gap: 6px; flex-shrink: 0; }
+  .uca-btn {
+    font-size: 0.75rem;
+    font-family: var(--font-body);
+    padding: 3px 10px;
+    border-radius: 99px;
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    color: var(--text2);
+    cursor: pointer;
+  }
+  .uca-btn:hover { background: var(--surface2); }
+  .uca-btn.del { color: var(--red); border-color: var(--red-border); }
+  .uca-btn.del:hover { background: var(--red-light); }
+
+  .unit-topics-preview {
+    font-size: 0.75rem;
+    color: var(--text3);
+    line-height: 1.6;
+    white-space: pre-wrap;
+    max-height: 80px;
+    overflow: hidden;
+    position: relative;
+  }
+  .unit-topics-preview.expanded { max-height: none; }
+  .expand-topics {
+    font-size: 0.72rem;
+    color: var(--accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+    padding: 0;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ── Edit Form (inline) ── */
+  .unit-edit-form {
+    display: none;
+    margin-top: 10px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+  .unit-edit-form.open { display: block; }
+  .form-field { margin-bottom: 10px; }
+  .form-field label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text3);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .form-field input, .form-field textarea {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    padding: 8px 12px;
+    border: 1px solid var(--border2);
+    border-radius: var(--radius);
+    background: var(--bg);
+    color: var(--text);
+    outline: none;
+    resize: vertical;
+  }
+  .form-field input:focus, .form-field textarea:focus {
+    border-color: var(--accent-border);
+    background: white;
+  }
+  .form-field textarea { min-height: 120px; line-height: 1.6; }
+  .form-actions { display: flex; gap: 8px; justify-content: flex-end; }
+  .form-save-btn {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 99px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+  }
+  .form-cancel-btn {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    border-radius: 99px;
+    border: 1px solid var(--border2);
+    background: transparent;
+    color: var(--text2);
+    cursor: pointer;
+  }
+
+  /* ── Add New Unit ── */
+  .add-unit-section {
+    padding: 12px 16px;
+    border-top: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .add-unit-toggle {
+    font-size: 0.8rem;
+    color: var(--accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 600;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .add-unit-form { display: none; margin-top: 12px; }
+  .add-unit-form.open { display: block; }
+
+  /* ── Score bar ── */
+  .score-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .sc {
+    font-size: 0.78rem;
+    padding: 4px 12px;
+    border-radius: 99px;
+    background: var(--surface2);
+    color: var(--text2);
+    border: 1px solid var(--border);
+  }
+  .sc strong { color: var(--text); }
+
+  /* ── Loading state ── */
+  .loading-box {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+  .spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 1rem;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-box p {
+    font-size: 0.9rem;
+    color: var(--text3);
+    font-style: italic;
+  }
+  .loading-box .sub {
+    font-size: 0.78rem;
+    color: var(--text3);
+    margin-top: 6px;
+  }
+  .loading-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    font-size: 0.82rem;
+    color: var(--text2);
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: var(--surface2);
+    border-radius: 99px;
+    border: 1px solid var(--border);
+    display: inline-flex;
+  }
+  .step-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border2);
+    transition: background 0.3s;
+  }
+  .step-dot.active { background: var(--accent); }
+  .step-dot.done { background: var(--accent); opacity: 0.4; }
+
+  /* ── Verification badge ── */
+  .verify-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 99px;
+    background: var(--accent-light);
+    color: var(--accent);
+    border: 1px solid var(--accent-border);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  .verify-badge.warn {
+    background: var(--gold-light);
+    color: var(--gold);
+    border-color: var(--gold-border);
+  }
+
+  /* ── Error state ── */
+  .error-box {
+    padding: 1rem 1.2rem;
+    background: var(--red-light);
+    border: 1px solid var(--red-border);
+    border-radius: var(--radius);
+    color: var(--red);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── Section label ── */
+  .sec-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin: 2rem 0 1rem;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* ── Question block ── */
+  .qblock {
+    margin-bottom: 2rem;
+    animation: fadeIn 0.3s ease both;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .q-meta {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .qnum {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text3);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .topic-pill {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: var(--surface2);
+    color: var(--text3);
+    border: 1px solid var(--border);
+  }
+  .diff-pill {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-weight: 500;
+  }
+  .diff-easy   { background: var(--accent-light); color: var(--accent); border: 1px solid var(--accent-border); }
+  .diff-medium { background: var(--gold-light); color: var(--gold); border: 1px solid var(--gold-border); }
+  .diff-hard   { background: var(--red-light); color: var(--red); border: 1px solid var(--red-border); }
+  .calc-pill {
+    font-size: 0.68rem;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: var(--blue-light);
+    color: var(--blue);
+    border: 1px solid var(--blue-border);
+  }
+
+  .qtext {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .choices { display: flex; flex-direction: column; gap: 6px; }
+  .choice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    background: var(--surface);
+    transition: all 0.12s;
+  }
+  .choice:hover { background: var(--surface2); border-color: var(--border2); }
+  .choice.correct  { border-color: var(--accent) !important; background: var(--accent-light) !important; }
+  .choice.wrong    { border-color: var(--red-border) !important; background: var(--red-light) !important; opacity: 0.75; }
+  .choice.locked   { cursor: default; pointer-events: none; }
+
+  .cl {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text3);
+    min-width: 18px;
+    padding-top: 1px;
+    flex-shrink: 0;
+  }
+  .ct {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── Answer reveal ── */
+  .reveal-btn {
+    margin-top: 10px;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    font-family: var(--font-body);
+    border: 1px solid var(--border2);
+    border-radius: 99px;
+    background: transparent;
+    color: var(--text2);
+    cursor: pointer;
+    transition: all 0.12s;
+  }
+  .reveal-btn:hover { background: var(--surface2); }
+
+  .abox {
+    margin-top: 10px;
+    padding: 14px 16px;
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    display: none;
+  }
+  .abox.on { display: block; }
+  .abox .ans-lbl {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+  .abox .ans-body {
+    font-size: 0.85rem;
+    color: var(--text);
+    line-height: 1.85;
+  }
+  .abox .ans-tip {
+    font-size: 0.8rem;
+    color: var(--text2);
+    font-style: italic;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    line-height: 1.65;
+  }
+
+  /* ── Divider ── */
+  hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+
+  /* ── Empty state ── */
+  .empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text3);
+  }
+  .empty .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .empty h2 {
+    font-family: var(--font-head);
+    font-size: 1.2rem;
+    color: var(--text2);
+    margin-bottom: 8px;
+  }
+  .empty p { font-size: 0.85rem; line-height: 1.7; }
+
+  /* ── Confirm dialog ── */
+  .confirm-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26,24,20,0.45);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+  }
+  .confirm-overlay.open { display: flex; }
+  .confirm-box {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    max-width: 360px;
+    width: 90%;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
+  .confirm-box h3 {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .confirm-box p { font-size: 0.85rem; color: var(--text2); line-height: 1.6; margin-bottom: 18px; }
+  .confirm-actions { display: flex; gap: 8px; justify-content: flex-end; }
+  .confirm-yes {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 7px 18px;
+    border-radius: 99px;
+    border: none;
+    background: var(--red);
+    color: white;
+    cursor: pointer;
+  }
+  .confirm-no {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    padding: 7px 14px;
+    border-radius: 99px;
+    border: 1px solid var(--border2);
+    background: transparent;
+    color: var(--text2);
+    cursor: pointer;
+  }
+
+  /* ── KaTeX overrides ── */
+  .katex { font-size: 1em; }
+  .qtext .katex { font-size: 1em; }
+  .ct .katex { font-size: 0.95em; }
+  .ans-body .katex { font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>Neha's AP Precalculus <span>Practice</span></h1>
+    <p>AI-generated questions — verified for accuracy — new ones every time ✦</p>
+  </div>
+
+  <!-- API Setup -->
+  <div class="apikey-banner" id="apiBanner">
+    <div style="width:100%">
+      <p><strong>🔑 Anthropic API Key</strong> Paste your key — saved only in your browser, never sent anywhere else.</p>
+      <div class="apikey-input-row" id="apiInputRow" style="margin-top:10px">
+        <input type="password" class="apikey-input" id="apiKeyInput" placeholder="sk-ant-..." style="flex:1"/>
+        <button class="apikey-save-btn" onclick="saveApiKey()">Save</button>
+      </div>
+      <div class="apikey-set-row" id="apiSetRow" style="display:none">
+        <span id="apiSetLabel">✓ API key saved</span>
+        <button class="apikey-change-btn" onclick="changeApiKey()">Change key</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <div class="unit-btns" id="unitBtns"></div>
+    <select class="diff-select" id="diffSel">
+      <option value="mixed">All difficulties</option>
+      <option value="easy">Easy only</option>
+      <option value="medium">Medium only</option>
+      <option value="hard">Hard only</option>
+    </select>
+    <select class="count-select" id="countSel">
+      <option value="5">5 questions</option>
+      <option value="10" selected>10 questions</option>
+      <option value="15">15 questions</option>
+      <option value="20">20 questions</option>
+    </select>
+    <button class="gen-btn" id="genBtn" onclick="generateQuestions()">
+      ✦ Generate Questions
+    </button>
+  </div>
+
+  <!-- Manage Units toggle -->
+  <button class="manage-toggle" id="manageToggle" onclick="toggleManagePanel()">
+    <span class="arrow">▶</span> Manage Units &amp; Topics
+  </button>
+
+  <!-- Manage Units Panel -->
+  <div class="manage-panel" id="managePanel">
+    <div class="manage-panel-header">
+      <h3>Units &amp; Topics</h3>
+      <button class="reset-btn" onclick="confirmReset()">↺ Reset to Defaults</button>
+    </div>
+    <div id="unitCardsList"></div>
+    <div class="add-unit-section">
+      <button class="add-unit-toggle" onclick="toggleAddUnit()">＋ Add New Unit</button>
+      <div class="add-unit-form" id="addUnitForm">
+        <div class="form-field">
+          <label>Button Label (short)</label>
+          <input type="text" id="newUnitBtn" placeholder="e.g. Unit 8"/>
+        </div>
+        <div class="form-field">
+          <label>Unit Header</label>
+          <input type="text" id="newUnitHeader" placeholder="e.g. AP Precalculus Unit 8 — Polar Functions."/>
+        </div>
+        <div class="form-field">
+          <label>Topics (one per line: ID Name — description)</label>
+          <textarea id="newUnitTopics" placeholder="8.1 Polar Coordinates — converting between polar and rectangular&#10;8.2 Polar Graphs — limaçons, rose curves, cardioids"></textarea>
+        </div>
+        <div class="form-actions">
+          <button class="form-cancel-btn" onclick="cancelAddUnit()">Cancel</button>
+          <button class="form-save-btn" onclick="saveNewUnit()">Add Unit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Score bar -->
+  <div class="score-bar" id="scoreBar" style="display:none">
+    <div class="sc">Answered: <strong id="scAnswered">0</strong></div>
+    <div class="sc">Correct: <strong id="scCorrect">0</strong></div>
+    <div class="sc">Score: <strong id="scPct">—</strong></div>
+  </div>
+
+  <div id="errorBox" class="error-box" style="display:none"></div>
+  <div id="content"></div>
+
+</div>
+
+<!-- Confirm Dialog -->
+<div class="confirm-overlay" id="confirmOverlay">
+  <div class="confirm-box">
+    <h3 id="confirmTitle">Are you sure?</h3>
+    <p id="confirmMsg"></p>
+    <div class="confirm-actions">
+      <button class="confirm-no" onclick="closeConfirm()">Cancel</button>
+      <button class="confirm-yes" id="confirmYesBtn">Yes, proceed</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─────────────────────────────────────────
+// DEFAULTS
+// ─────────────────────────────────────────
+const DEFAULT_UNITS = [
+  {
+    id: 'u6',
+    btnLabel: 'Unit 6',
+    header: 'AP Precalculus Unit 6 — Trigonometric and Polar Functions.',
+    topics: `6.1 Periodic Phenomena — period, f(x + period) = f(x)
+6.2 Sine, Cosine, Tangent — unit circle, quadrants, CAST rule
+6.3 Radian Measure — arc length s=rθ, coterminal angles
+6.4 Sine and Cosine Values — exact values at standard angles, reducing large angles
+6.5 Graphs of Sine and Cosine — amplitude, midline, range
+6.6 Sinusoidal Transformations — phase shift, period from b, vertical shift
+6.7 Sinusoidal Context & Modeling — interpreting a, b, c, d in real-world context`
+  },
+  {
+    id: 'u7',
+    btnLabel: 'Unit 7',
+    header: 'AP Precalculus Unit 7 — Trigonometric Equations and Identities.',
+    topics: `7.1 The Tangent Function — period, asymptotes, slope of terminal ray
+7.2 Inverse Trigonometric Functions — arcsin, arccos, arctan ranges, solving equations
+7.3–7.4 Trig Equations and Inequalities — solving sin/cos/tan equations, multiple solutions in [0,2π]
+7.5 Sec, Csc, Cot — reciprocal identities, solving equations
+7.6–7.7 Trigonometric Identities — Pythagorean identities, simplifying expressions`
+  }
+];
+
+const STORAGE_UNITS = 'nehaPrecalc_units_v2';
+const STORAGE_KEY   = 'nehaPrecalc_apiKey';
+const MODEL         = 'claude-sonnet-4-5';
+const API_URL       = 'https://api.anthropic.com/v1/messages';
+
+// ─────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────
+let currentUnit = null;
+let questions   = [];
+let answered    = {};
+let correct     = {};
+let katexReady  = false;
+
+// ─────────────────────────────────────────
+// API KEY
+// ─────────────────────────────────────────
+function getApiKey() { return localStorage.getItem(STORAGE_KEY) || ''; }
+
+function saveApiKey() {
+  const val = document.getElementById('apiKeyInput').value.trim();
+  if (!val) { alert('Please paste your Anthropic API key.'); return; }
+  localStorage.setItem(STORAGE_KEY, val);
+  renderApiKeyBanner();
+}
+
+function changeApiKey() {
+  document.getElementById('apiKeyInput').value = getApiKey();
+  document.getElementById('apiSetRow').style.display   = 'none';
+  document.getElementById('apiInputRow').style.display = 'flex';
+}
+
+function renderApiKeyBanner() {
+  const key = getApiKey();
+  if (key) {
+    document.getElementById('apiInputRow').style.display = 'none';
+    document.getElementById('apiSetRow').style.display   = 'flex';
+  } else {
+    document.getElementById('apiInputRow').style.display = 'flex';
+    document.getElementById('apiSetRow').style.display   = 'none';
+  }
+}
+
+// ─────────────────────────────────────────
+// UNITS — storage
+// ─────────────────────────────────────────
+function loadUnits() {
+  try {
+    const raw = localStorage.getItem(STORAGE_UNITS);
+    if (raw) return JSON.parse(raw);
+  } catch(e) {}
+  return JSON.parse(JSON.stringify(DEFAULT_UNITS));
+}
+function saveUnits(units) {
+  localStorage.setItem(STORAGE_UNITS, JSON.stringify(units));
+}
+function resetUnits() {
+  saveUnits(JSON.parse(JSON.stringify(DEFAULT_UNITS)));
+  currentUnit = DEFAULT_UNITS[0].id;
+  renderUnitButtons();
+  renderUnitCards();
+}
+
+// ─────────────────────────────────────────
+// UNIT BUTTONS (dynamic)
+// ─────────────────────────────────────────
+function renderUnitButtons() {
+  const units = loadUnits();
+  const container = document.getElementById('unitBtns');
+
+  // Pick default if currentUnit no longer exists
+  const ids = units.map(u => u.id);
+  if (!currentUnit || !ids.includes(currentUnit)) {
+    currentUnit = units.length > 0 ? units[0].id : null;
+  }
+
+  let html = '';
+  units.forEach(u => {
+    const active = u.id === currentUnit ? 'active' : '';
+    html += `<button class="ubtn ${active}" data-unit="${u.id}" onclick="setUnit('${u.id}')">${u.btnLabel}</button>`;
+  });
+  if (units.length > 1) {
+    const active = currentUnit === 'all' ? 'active' : '';
+    html += `<button class="ubtn ${active}" data-unit="all" onclick="setUnit('all')">Mixed</button>`;
+  }
+  container.innerHTML = html;
+}
+
+function setUnit(u) {
+  currentUnit = u;
+  document.querySelectorAll('.ubtn').forEach(b => {
+    b.classList.toggle('active', b.dataset.unit == u);
+  });
+}
+
+// ─────────────────────────────────────────
+// MANAGE UNITS PANEL
+// ─────────────────────────────────────────
+function toggleManagePanel() {
+  const panel  = document.getElementById('managePanel');
+  const toggle = document.getElementById('manageToggle');
+  const open   = panel.classList.toggle('open');
+  toggle.classList.toggle('open', open);
+}
+
+function renderUnitCards() {
+  const units = loadUnits();
+  const list  = document.getElementById('unitCardsList');
+
+  if (units.length === 0) {
+    list.innerHTML = '<div style="padding:16px;font-size:0.82rem;color:var(--text3);text-align:center;">No units yet. Add one below.</div>';
+    return;
+  }
+
+  list.innerHTML = units.map((u, idx) => `
+    <div class="unit-card" id="ucard-${u.id}">
+      <div class="unit-card-header">
+        <div>
+          <div class="unit-card-label">${u.btnLabel}</div>
+          <div class="unit-card-sub">${u.header}</div>
+        </div>
+        <div class="unit-card-actions">
+          <button class="uca-btn" onclick="openEditUnit('${u.id}')">Edit</button>
+          <button class="uca-btn del" onclick="confirmDeleteUnit('${u.id}')">Delete</button>
+        </div>
+      </div>
+      <div class="unit-topics-preview" id="preview-${u.id}">${escHtml(u.topics)}</div>
+      <button class="expand-topics" id="expandbtn-${u.id}" onclick="toggleTopicsExpand('${u.id}')">Show all topics ▾</button>
+      <div class="unit-edit-form" id="editform-${u.id}">
+        <div class="form-field">
+          <label>Button Label</label>
+          <input type="text" id="ef-btn-${u.id}" value="${escHtml(u.btnLabel)}"/>
+        </div>
+        <div class="form-field">
+          <label>Unit Header</label>
+          <input type="text" id="ef-header-${u.id}" value="${escHtml(u.header)}"/>
+        </div>
+        <div class="form-field">
+          <label>Topics (one per line)</label>
+          <textarea id="ef-topics-${u.id}">${escHtml(u.topics)}</textarea>
+        </div>
+        <div class="form-actions">
+          <button class="form-cancel-btn" onclick="closeEditUnit('${u.id}')">Cancel</button>
+          <button class="form-save-btn" onclick="saveEditUnit('${u.id}')">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+
+function toggleTopicsExpand(id) {
+  const el  = document.getElementById(`preview-${id}`);
+  const btn = document.getElementById(`expandbtn-${id}`);
+  const expanded = el.classList.toggle('expanded');
+  btn.textContent = expanded ? 'Hide ▴' : 'Show all topics ▾';
+}
+
+function openEditUnit(id) {
+  document.querySelectorAll('.unit-edit-form').forEach(f => f.classList.remove('open'));
+  document.getElementById(`editform-${id}`).classList.add('open');
+}
+function closeEditUnit(id) {
+  document.getElementById(`editform-${id}`).classList.remove('open');
+}
+function saveEditUnit(id) {
+  const units = loadUnits();
+  const idx   = units.findIndex(u => u.id === id);
+  if (idx === -1) return;
+  units[idx].btnLabel = document.getElementById(`ef-btn-${id}`).value.trim()    || units[idx].btnLabel;
+  units[idx].header   = document.getElementById(`ef-header-${id}`).value.trim() || units[idx].header;
+  units[idx].topics   = document.getElementById(`ef-topics-${id}`).value.trim() || units[idx].topics;
+  saveUnits(units);
+  renderUnitButtons();
+  renderUnitCards();
+}
+
+function confirmDeleteUnit(id) {
+  const units = loadUnits();
+  const u = units.find(x => x.id === id);
+  showConfirm(
+    'Delete unit?',
+    `This will permanently remove "${u?.btnLabel || 'this unit'}" and all its topics.`,
+    () => {
+      const updated = units.filter(x => x.id !== id);
+      saveUnits(updated);
+      if (currentUnit === id) currentUnit = updated[0]?.id || null;
+      renderUnitButtons();
+      renderUnitCards();
+    }
+  );
+}
+
+function toggleAddUnit() {
+  document.getElementById('addUnitForm').classList.toggle('open');
+}
+function cancelAddUnit() {
+  document.getElementById('addUnitForm').classList.remove('open');
+  ['newUnitBtn','newUnitHeader','newUnitTopics'].forEach(id => document.getElementById(id).value = '');
+}
+function saveNewUnit() {
+  const btnLabel = document.getElementById('newUnitBtn').value.trim();
+  const header   = document.getElementById('newUnitHeader').value.trim();
+  const topics   = document.getElementById('newUnitTopics').value.trim();
+  if (!btnLabel || !header || !topics) {
+    alert('Please fill in all three fields.');
+    return;
+  }
+  const units = loadUnits();
+  const id = 'u_' + Date.now();
+  units.push({ id, btnLabel, header, topics });
+  saveUnits(units);
+  cancelAddUnit();
+  renderUnitButtons();
+  renderUnitCards();
+}
+
+// ─────────────────────────────────────────
+// CONFIRM DIALOG
+// ─────────────────────────────────────────
+let _confirmCallback = null;
+function showConfirm(title, msg, cb) {
+  document.getElementById('confirmTitle').textContent = title;
+  document.getElementById('confirmMsg').textContent   = msg;
+  _confirmCallback = cb;
+  document.getElementById('confirmOverlay').classList.add('open');
+  document.getElementById('confirmYesBtn').onclick = () => {
+    closeConfirm();
+    if (_confirmCallback) _confirmCallback();
+  };
+}
+function closeConfirm() {
+  document.getElementById('confirmOverlay').classList.remove('open');
+  _confirmCallback = null;
+}
+function confirmReset() {
+  showConfirm(
+    'Reset to defaults?',
+    'This will restore Unit 6 and Unit 7 to their original topics and remove any custom units you added.',
+    resetUnits
+  );
+}
+
+// ─────────────────────────────────────────
+// PROMPT BUILDER
+// ─────────────────────────────────────────
+function buildUnitDesc() {
+  const units = loadUnits();
+  if (currentUnit === 'all') {
+    const allDesc = units.map(u =>
+      `${u.header}\nTopics to draw from (pick a variety):\n${u.topics}`
+    ).join('\n\n');
+    return allDesc + '\n\nMix questions from all units evenly.';
+  }
+  const u = units.find(x => x.id === currentUnit);
+  if (!u) return '';
+  return `${u.header}\nTopics to draw from (pick a variety):\n${u.topics}`;
+}
+
+function buildPrompt(count) {
+  const diff = document.getElementById('diffSel').value;
+  const unitDesc = buildUnitDesc();
+
+  const diffInstr = diff === 'mixed'
+    ? `Mix difficulties across the ${count} questions: roughly 30% easy, 40% medium, 30% hard.`
+    : `All ${count} questions should be ${diff} difficulty.`;
+
+  const easyCount   = diff === 'mixed' ? Math.round(count * 0.3) : (diff === 'easy'   ? count : 0);
+  const medCount    = diff === 'mixed' ? Math.round(count * 0.4) : (diff === 'medium' ? count : 0);
+  const hardCount   = diff === 'mixed' ? count - easyCount - medCount : (diff === 'hard' ? count : 0);
+
+  return `You are a College Board AP Precalculus exam question author with 15 years of experience writing official AP exam questions.
+
+Generate exactly ${count} multiple-choice questions for a student preparing for the AP Precalculus exam.
+
+${unitDesc}
+
+DIFFICULTY: ${diffInstr}
+- Easy: Single-step, tests one definition or recall directly (e.g., "what is the amplitude of f(x) = 3sin(2x)?")
+- Medium: Two-step, connects two concepts (e.g., find the period then evaluate the function at a specific value)
+- Hard: Multi-step or conceptual trap — modeling, composition, identity chains, "which must be true" requiring elimination reasoning
+
+QUESTION ARCHETYPES — include a variety across the set:
+• Periodic property: given f(a) = k, find f(a + n·period) using only the definition of period
+• Parameter reading: from a graph described in words or an equation, identify amplitude / period / phase shift / midline
+• Real-world sinusoidal modeling with a context sentence (Ferris wheel, tide, temperature cycle)
+• Identity equivalence: "which expression is equivalent to..."
+• Exact value at a standard or derived angle using the unit circle
+• Inverse trig output range or composition: sin(arccos(x)), arctan(tan(θ)) for θ outside principal range
+• Equation solving: find all solutions in [0, 2π]
+
+AP EXAM STYLE — follow College Board conventions exactly:
+• Use precise phrasing: "Which of the following could be...", "Which of the following must be true...", "Which of the following is equivalent to..."
+• Format math using LaTeX delimiters: inline math with \\( ... \\) and display math with \\[ ... \\]
+  Examples: \\(\\sin\\left(\\frac{\\pi}{3}\\right)\\), \\(f(x) = 2\\cos\\left(\\frac{\\pi}{4}x - 1\\right) + 3\\), \\(\\frac{\\sqrt{3}}{2}\\)
+• Use exact values only (fractions, radicals) — no decimals unless the question specifically tests approximation
+• Label each question: calculator field is "none" for no-calculator or "ok" for calculator-permitted
+
+DISTRACTOR DESIGN — wrong answers must be traps, not random:
+• Each wrong choice must be the result of a specific, named student error:
+  - Period = 2πb instead of 2π/b
+  - Phase shift direction reversed (−c/b vs +c/b)
+  - Amplitude = a² instead of |a|
+  - arcsin output outside [−π/2, π/2]
+  - Forgetting to account for vertical shift when finding range
+  - Sign error, arithmetic error, or skipping a step
+• Never use obviously absurd distractors
+
+EXPLANATION: Show full step-by-step College Board style working. Use LaTeX for all math. Name the error that each wrong answer represents.
+
+AP TIP: 1–2 sentences of genuine exam strategy — not generic advice.
+
+Output format: a raw JSON array of ${count} objects, each with keys: topic, diff, calculator, q, choices (4-item array), ans (integer 0-3), exp, tip.
+Start your response with [ and end with ]. No other text before or after.
+Generate ${count} questions now:`;
+}
+
+function buildVerifyPrompt(questions) {
+  // Send only what's needed to verify — omit exp/tip to save ~60% input tokens
+  const qs = questions.map((q, i) => ({
+    index: i,
+    question: q.q,
+    choices: q.choices,
+    labeled_answer_index: q.ans
+  }));
+
+  return `AP Precalculus answer verifier. Solve each question from scratch. Do NOT assume the labeled answer is correct.
+
+Questions: ${JSON.stringify(qs)}
+
+Return ONLY a JSON array: [{"index":0,"ok":true,"your_answer":0},{"index":1,"ok":false,"your_answer":2,"issue":"reason"}]
+Verify all ${questions.length} now:`;}
+
+// ─────────────────────────────────────────
+// GENERATION + VERIFICATION
+// ─────────────────────────────────────────
+async function callClaude(prompt, maxTokens) {
+  const key = getApiKey();
+  if (!key) throw new Error('No API key set. Please paste your Anthropic key above.');
+
+  const res = await fetch(API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': key,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      max_tokens: maxTokens || 3500,
+      temperature: 0.2,
+      messages: [{ role: 'user', content: prompt }]
+    })
+  });
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error?.message || `API error ${res.status}`);
+  }
+
+  const data = await res.json();
+  let raw = (data.content || []).map(b => b.text || '').join('');
+
+  // Robust JSON array extraction — handles markdown fences, preamble, wrapped objects
+  raw = raw.replace(/^```(?:json)?[\r\n]*/i, '').replace(/[\r\n]*```$/i, '').trim();
+
+  // Try 1: response is already a clean array
+  if (raw.startsWith('[')) {
+    try { const p = JSON.parse(raw); if (Array.isArray(p) && p.length > 0) return raw; } catch(e) {}
+  }
+  // Try 2: find array anywhere in response (handles preamble/postamble)
+  const arrMatch = raw.match(/\[[\s\S]*\]/);
+  if (arrMatch) {
+    try { const p = JSON.parse(arrMatch[0]); if (Array.isArray(p) && p.length > 0) return arrMatch[0]; } catch(e) {}
+  }
+  // Try 3: wrapped in object e.g. {"questions": [...]}
+  try {
+    const obj = JSON.parse(raw);
+    if (Array.isArray(obj) && obj.length > 0) return raw;
+    for (const v of Object.values(obj)) {
+      if (Array.isArray(v) && v.length > 0) return JSON.stringify(v);
+    }
+  } catch(e) {}
+
+  return raw; // caller will throw on JSON.parse failure
+}
+
+function setLoadingStep(step) {
+  // step 1 = generating, step 2 = verifying
+  const d1 = document.getElementById('stepDot1');
+  const d2 = document.getElementById('stepDot2');
+  const lbl = document.getElementById('loadingLabel');
+  if (!d1) return;
+  if (step === 1) {
+    d1.className = 'step-dot active';
+    d2.className = 'step-dot';
+    lbl.textContent = 'Step 1 of 2 — Writing questions…';
+  } else {
+    d1.className = 'step-dot done';
+    d2.className = 'step-dot active';
+    lbl.textContent = 'Step 2 of 2 — Verifying every answer independently…';
+  }
+}
+
+async function generateQuestions() {
+  const key = getApiKey();
+  if (!key) {
+    document.getElementById('errorBox').textContent = '⚠ Please paste your Anthropic API key above first.';
+    document.getElementById('errorBox').style.display = 'block';
+    return;
+  }
+
+  const btn      = document.getElementById('genBtn');
+  const content  = document.getElementById('content');
+  const errorBox = document.getElementById('errorBox');
+  const count    = parseInt(document.getElementById('countSel').value);
+
+  btn.disabled = true;
+  btn.textContent = '⟳ Generating…';
+  errorBox.style.display = 'none';
+
+  answered = {};
+  correct  = {};
+  document.getElementById('scoreBar').style.display = 'none';
+  updateScore();
+
+  content.innerHTML = `
+    <div class="loading-box">
+      <div class="spinner"></div>
+      <p>Generating AP-style questions for you…</p>
+      <p class="sub">Two-step process: generate then verify. ~20–30 seconds total.</p>
+      <br/>
+      <div style="display:flex;gap:8px;justify-content:center;align-items:center;margin-top:4px">
+        <span class="step-dot active" id="stepDot1"></span>
+        <span class="step-dot" id="stepDot2"></span>
+        <span id="loadingLabel" style="font-size:0.8rem;color:var(--text2);margin-left:4px">Step 1 of 2 — Writing questions…</span>
+      </div>
+    </div>`;
+
+  try {
+    // ── PASS 1: Generate ──
+    setLoadingStep(1);
+    const rawQ = await callClaude(buildPrompt(count), 3500);
+    let generated;
+    try {
+      generated = JSON.parse(rawQ);
+    } catch(e) {
+      throw new Error('Question generation returned invalid JSON. Please try again.');
+    }
+    if (!Array.isArray(generated) || generated.length === 0) {
+      throw new Error('Unexpected response format from generation. Please try again.');
+    }
+
+    // ── PASS 2: Verify ──
+    setLoadingStep(2);
+    const rawV = await callClaude(buildVerifyPrompt(generated), 600);
+    let verdicts;
+    try {
+      verdicts = JSON.parse(rawV);
+    } catch(e) {
+      // Verification parse failed — show questions with warning
+      verdicts = generated.map((_, i) => ({ index: i, ok: true, your_answer: generated[i].ans }));
+    }
+
+    // ── Reconcile ──
+    let passed = 0, fixed = 0, dropped = 0;
+    const verified = [];
+
+    generated.forEach((q, i) => {
+      const v = verdicts.find(x => x.index === i);
+      if (!v) { dropped++; return; } // no verdict = drop
+
+      if (v.ok) {
+        verified.push({ ...q, _verifyStatus: 'ok' });
+        passed++;
+      } else {
+        // Verifier disagrees — try to auto-correct if only the ans index differs
+        if (typeof v.your_answer === 'number' && v.your_answer >= 0 && v.your_answer <= 3 && v.your_answer !== q.ans) {
+          // Use the verifier's answer but flag it
+          verified.push({ ...q, ans: v.your_answer, _verifyStatus: 'fixed', _fixNote: v.issue || '' });
+          fixed++;
+        } else {
+          // Can't auto-correct — drop
+          dropped++;
+        }
+      }
+    });
+
+    if (verified.length === 0) {
+      throw new Error('All generated questions failed verification. This is unusual — please try again.');
+    }
+
+    questions = verified.map(sanitizeQuestion).filter(q => q !== null);
+    if (questions.length === 0) throw new Error('No valid questions after sanitization. Please try again.');
+    renderQuestions(passed, fixed, dropped);
+    document.getElementById('scoreBar').style.display = 'flex';
+
+  } catch (e) {
+    errorBox.textContent = '⚠ ' + e.message;
+    errorBox.style.display = 'block';
+    content.innerHTML = '';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '✦ Generate Questions';
+  }
+}
+
+// ─────────────────────────────────────────
+// QUESTION SANITIZER
+// ─────────────────────────────────────────
+function sanitizeQuestion(q) {
+  try {
+    // Coerce ans to integer, clamp to 0-3
+    let ans = parseInt(q.ans, 10);
+    if (isNaN(ans) || ans < 0 || ans > 3) ans = 0;
+
+    // Ensure choices is an array of exactly 4 strings
+    let choices = Array.isArray(q.choices) ? q.choices : [];
+    while (choices.length < 4) choices.push('—');
+    choices = choices.slice(0, 4).map(c => String(c || '—'));
+
+    // Normalize diff
+    const diff = String(q.diff || 'medium').toLowerCase();
+    const validDiff = ['easy','medium','hard'].includes(diff) ? diff : 'medium';
+
+    return {
+      topic:      String(q.topic      || ''),
+      diff:       validDiff,
+      calculator: String(q.calculator || 'none'),
+      q:          String(q.q          || ''),
+      choices,
+      ans,
+      exp:        String(q.exp        || ''),
+      tip:        String(q.tip        || ''),
+      _verifyStatus: q._verifyStatus  || 'ok',
+      _fixNote:      q._fixNote       || ''
+    };
+  } catch(e) {
+    return null; // Drop malformed questions entirely
+  }
+}
+
+// ─────────────────────────────────────────
+// RENDER
+// ─────────────────────────────────────────
+function renderQuestions(passed, fixed, dropped) {
+  const content = document.getElementById('content');
+  const labels  = ['A', 'B', 'C', 'D'];
+
+  let badgeHtml = '';
+  if (dropped === 0 && fixed === 0) {
+    badgeHtml = `<div class="verify-badge">✓ All ${passed} answers independently verified</div>`;
+  } else {
+    let msg = `✓ ${passed} verified`;
+    if (fixed > 0)   msg += ` · ${fixed} auto-corrected`;
+    if (dropped > 0) msg += ` · ${dropped} removed (failed verification)`;
+    badgeHtml = `<div class="verify-badge warn">${msg}</div>`;
+  }
+
+  let html = badgeHtml;
+  html += `<div class="sec-label"><span>Practice Set — ${questions.length} Questions</span></div>`;
+
+  questions.forEach((q, qi) => {
+    const diffClass   = `diff-${q.diff || 'medium'}`;
+    const anim        = `animation-delay:${qi * 0.05}s`;
+    const calcLabel   = q.calculator === 'ok' ? '<span class="calc-pill">🔢 Calculator OK</span>' : '<span class="calc-pill">✏️ No Calculator</span>';
+
+    html += `
+    <div class="qblock" style="${anim}" id="qblock-${qi}">
+      <div class="q-meta">
+        <span class="qnum">Q${qi + 1}</span>
+        <span class="topic-pill">${q.topic || ''}</span>
+        <span class="diff-pill ${diffClass}">${q.diff || 'medium'}</span>
+        ${calcLabel}
+      </div>
+      <div class="qtext" id="qtext-${qi}">${q.q}</div>
+      <div class="choices" id="choices-${qi}">
+        ${q.choices.map((c, ci) => `
+          <div class="choice" id="choice-${qi}-${ci}" onclick="selectChoice(${qi}, ${ci})">
+            <span class="cl">${labels[ci]}</span>
+            <span class="ct" id="ct-${qi}-${ci}">${c}</span>
+          </div>
+        `).join('')}
+      </div>
+      <button class="reveal-btn" id="revbtn-${qi}" onclick="revealAnswer(${qi})">Show Answer &amp; Explanation</button>
+      <div class="abox" id="abox-${qi}">
+        <div class="ans-lbl">✓ Correct Answer: ${labels[q.ans]}</div>
+        <div class="ans-body" id="exp-${qi}">${q.exp}</div>
+        <div class="ans-tip" id="tip-${qi}">💡 AP Tip: ${q.tip}</div>
+      </div>
+    </div>
+    ${qi < questions.length - 1 ? '<hr>' : ''}`;
+  });
+
+  content.innerHTML = html;
+
+  // Render KaTeX after DOM is ready
+  renderMath();
+}
+
+function renderMath() {
+  const tryRender = () => {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.getElementById('content'), {
+        delimiters: [
+          { left: '\\(', right: '\\)', display: false },
+          { left: '\\[', right: '\\]', display: true },
+          { left: '$',   right: '$',   display: false }
+        ],
+        throwOnError: false,
+        errorColor: '#c0392b'
+      });
+    } else {
+      setTimeout(tryRender, 150);
+    }
+  };
+  setTimeout(tryRender, 50);
+}
+
+// ─────────────────────────────────────────
+// INTERACTION
+// ─────────────────────────────────────────
+function selectChoice(qi, ci) {
+  if (answered[qi] !== undefined) return;
+  answered[qi] = ci;
+
+  const q = questions[qi];
+  const choicesEl = document.getElementById(`choices-${qi}`);
+
+  choicesEl.querySelectorAll('.choice').forEach((el, i) => {
+    el.classList.add('locked');
+    if (i === q.ans)  el.classList.add('correct');
+    else if (i === ci) el.classList.add('wrong');
+  });
+
+  if (ci === q.ans) correct[qi] = true;
+
+  revealAnswer(qi);
+  updateScore();
+}
+
+function revealAnswer(qi) {
+  const abox = document.getElementById(`abox-${qi}`);
+  const btn  = document.getElementById(`revbtn-${qi}`);
+  abox.classList.add('on');
+  btn.style.display = 'none';
+  // Re-render math inside the answer box
+  if (typeof renderMathInElement === 'function') {
+    renderMathInElement(abox, {
+      delimiters: [
+        { left: '\\(', right: '\\)', display: false },
+        { left: '\\[', right: '\\]', display: true },
+        { left: '$',   right: '$',   display: false }
+      ],
+      throwOnError: false
+    });
+  }
+}
+
+function updateScore() {
+  const ans = Object.keys(answered).length;
+  const cor = Object.keys(correct).length;
+  const pct = ans > 0 ? Math.round((cor / ans) * 100) + '%' : '—';
+  document.getElementById('scAnswered').textContent = ans;
+  document.getElementById('scCorrect').textContent  = cor;
+  document.getElementById('scPct').textContent      = pct;
+}
+
+// ─────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────
+(function init() {
+  // Warn if opened from filesystem — browsers block API calls from file://
+  if (window.location.protocol === 'file:') {
+    const warn = document.createElement('div');
+    warn.style.cssText = 'background:#fff3cd;border:1px solid #ffc107;border-radius:10px;padding:14px 16px;margin-bottom:1rem;font-size:0.83rem;line-height:1.7;color:#6d4c00;font-family:DM Sans,sans-serif';
+    warn.innerHTML = [
+      '<strong>&#9888; One-time setup needed</strong><br>',
+      'Your browser is blocking API calls because the file is opened from your hard drive.',
+      '<br><strong>Fix (takes 30 seconds):</strong><br>',
+      '1. Copy this file to your Desktop<br>',
+      '2. In Edge/Chrome address bar type: <code style="background:#f5f5f5;padding:1px 5px;border-radius:3px">edge://flags/#block-insecure-private-network-requests</code><br>',
+      '3. Set it to <strong>Disabled</strong> &rarr; click Relaunch<br>',
+      '4. Open the file again &mdash; it will work permanently after this.'
+    ].join('');
+    document.querySelector('.page').insertBefore(warn, document.querySelector('.page').firstChild);
+  }
+  renderApiKeyBanner();
+  renderUnitButtons();
+  renderUnitCards();
+
+  document.getElementById('content').innerHTML = `
+    <div class="empty">
+      <div class="icon">📐</div>
+      <h2>Ready when you are, Neha!</h2>
+      <p>Pick a unit above and click <strong>Generate Questions</strong>.<br/>
+      Claude will write fresh AP-style questions, then independently verify<br/>
+      every single answer before you see them.</p>
+    </div>`;
+})();
+</script>
+</body>
+</html>
