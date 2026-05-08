@@ -1297,15 +1297,15 @@ async function generateQuestions() {
   try {
     // ── PASS 1: Generate ──
     setLoadingStep(1);
-    const rawQ = await callClaude(buildPrompt(count), 3500);
+    const rawQ = await callClaude(buildPrompt(count), count * 450 + 500);
     let generated;
     try {
       generated = JSON.parse(rawQ);
     } catch(e) {
-      throw new Error('Question generation returned invalid JSON. Please try again.');
+      throw new Error('RAW RESPONSE WAS: ' + rawQ.substring(0, 800));
     }
     if (!Array.isArray(generated) || generated.length === 0) {
-      throw new Error('Unexpected response format from generation. Please try again.');
+      throw new Error('Not an array. RAW: ' + rawQ.substring(0, 400));
     }
 
     // ── PASS 2: Verify ──
@@ -1527,21 +1527,7 @@ function updateScore() {
 // INIT
 // ─────────────────────────────────────────
 (function init() {
-  // Warn if opened from filesystem — browsers block API calls from file://
-  if (window.location.protocol === 'file:') {
-    const warn = document.createElement('div');
-    warn.style.cssText = 'background:#fff3cd;border:1px solid #ffc107;border-radius:10px;padding:14px 16px;margin-bottom:1rem;font-size:0.83rem;line-height:1.7;color:#6d4c00;font-family:DM Sans,sans-serif';
-    warn.innerHTML = [
-      '<strong>&#9888; One-time setup needed</strong><br>',
-      'Your browser is blocking API calls because the file is opened from your hard drive.',
-      '<br><strong>Fix (takes 30 seconds):</strong><br>',
-      '1. Copy this file to your Desktop<br>',
-      '2. In Edge/Chrome address bar type: <code style="background:#f5f5f5;padding:1px 5px;border-radius:3px">edge://flags/#block-insecure-private-network-requests</code><br>',
-      '3. Set it to <strong>Disabled</strong> &rarr; click Relaunch<br>',
-      '4. Open the file again &mdash; it will work permanently after this.'
-    ].join('');
-    document.querySelector('.page').insertBefore(warn, document.querySelector('.page').firstChild);
-  }
+  // Running on https:// - no file:// restrictions
   renderApiKeyBanner();
   renderUnitButtons();
   renderUnitCards();
