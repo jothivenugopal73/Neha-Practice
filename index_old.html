@@ -849,7 +849,7 @@ const DEFAULT_UNITS = [
 
 const STORAGE_UNITS = 'nehaPrecalc_units_v2';
 const STORAGE_KEY   = 'nehaPrecalc_apiKey';
-const MODEL         = 'claude-sonnet-4-6';
+const MODEL         = 'claude-sonnet-4-5';
 const API_URL       = 'https://api.anthropic.com/v1/messages';
 
 // ─────────────────────────────────────────
@@ -1218,53 +1218,28 @@ async function callClaude(prompt, maxTokens) {
   const data = await res.json();
   let raw = (data.content || []).map(b => b.text || '').join('');
 
-  // Strip markdown fences and trim
+  // Robust JSON array extraction — handles markdown fences, preamble, wrapped objects
   raw = raw.replace(/^```(?:json)?[\r\n]*/i, '').replace(/[\r\n]*```$/i, '').trim();
 
-  // ── Robust JSON repair for LaTeX backslashes ──────────────────────────
-  // The model outputs valid LaTeX like \( \frac{\pi}{2} \) inside JSON strings,
-  // but sometimes single backslashes slip through and break JSON.parse().
-  // Strategy: extract the JSON array text, then fix unescaped backslashes
-  // only INSIDE string values (between quotes), leaving the JSON structure intact.
-  function repairBackslashes(str) {
-    // Replace any backslash NOT already followed by a valid JSON escape char
-    // Valid: \" \\ \/ \b \f \n \r \t \uXXXX
-    // Everything else (e.g. \( \) \f \s \c) needs to be doubled
-    return str.replace(/\\(?!["\\/bfnrtu])/g, '\\\\');
-  }
-
-  function tryParse(text) {
-    // Attempt 1: as-is
-    try { const p = JSON.parse(text); if (Array.isArray(p) && p.length > 0) return p; } catch(e) {}
-    // Attempt 2: repair backslashes then parse
-    try { const p = JSON.parse(repairBackslashes(text)); if (Array.isArray(p) && p.length > 0) return p; } catch(e) {}
-    return null;
-  }
-
-  // Try 1: whole raw response is a clean array
+  // Try 1: response is already a clean array
   if (raw.startsWith('[')) {
-    const p = tryParse(raw);
-    if (p) return JSON.stringify(p);
+    try { const p = JSON.parse(raw); if (Array.isArray(p) && p.length > 0) return raw; } catch(e) {}
   }
-
-  // Try 2: find the outermost [...] block (handles preamble/postamble text)
+  // Try 2: find array anywhere in response (handles preamble/postamble)
   const arrMatch = raw.match(/\[[\s\S]*\]/);
   if (arrMatch) {
-    const p = tryParse(arrMatch[0]);
-    if (p) return JSON.stringify(p);
+    try { const p = JSON.parse(arrMatch[0]); if (Array.isArray(p) && p.length > 0) return arrMatch[0]; } catch(e) {}
   }
-
   // Try 3: wrapped in object e.g. {"questions": [...]}
   try {
-    const repaired = repairBackslashes(raw);
-    const obj = JSON.parse(repaired);
-    if (Array.isArray(obj) && obj.length > 0) return JSON.stringify(obj);
+    const obj = JSON.parse(raw);
+    if (Array.isArray(obj) && obj.length > 0) return raw;
     for (const v of Object.values(obj)) {
       if (Array.isArray(v) && v.length > 0) return JSON.stringify(v);
     }
   } catch(e) {}
 
-  return raw; // caller will surface the parse error with the raw text
+  return raw; // caller will throw on JSON.parse failure
 }
 
 function setLoadingStep(step) {
