@@ -1,0 +1,152 @@
+[
+  {
+    "id": "ap-precalc",
+    "name": "AP Precalculus",
+    "icon": "📐",
+    "color": "#6366f1",
+    "units": [
+      {
+        "id": "unit1",
+        "name": "Unit 1 – Polynomial and Rational Functions",
+        "topics": ["Polynomial Functions", "Rational Functions", "Zeros and Factors", "Polynomial Division", "Rational Inequalities"]
+      },
+      {
+        "id": "unit2",
+        "name": "Unit 2 – Exponential and Logarithmic Functions",
+        "topics": ["Exponential Growth and Decay", "Logarithmic Functions", "Properties of Logarithms", "Solving Exponential Equations", "Modeling with Exponentials"]
+      },
+      {
+        "id": "unit3",
+        "name": "Unit 3 – Trigonometric and Polar Functions",
+        "topics": ["Unit Circle", "Sine and Cosine Functions", "Tangent Function", "Inverse Trig Functions", "Polar Coordinates"]
+      },
+      {
+        "id": "unit4",
+        "name": "Unit 4 – Functions Involving Parameters, Vectors, and Matrices",
+        "topics": ["Parametric Functions", "Vectors", "Matrix Operations", "Transformations"]
+      }
+    ]
+  },
+  {
+    "id": "ap-biology",
+    "name": "AP Biology",
+    "icon": "🧬",
+    "color": "#10b981",
+    "units": [
+      {
+        "id": "unit1",
+        "name": "Unit 1 – Chemistry of Life",
+        "topics": ["Water and its Properties", "Macromolecules", "Nucleic Acids", "Enzyme Structure and Function"]
+      },
+      {
+        "id": "unit2",
+        "name": "Unit 2 – Cell Structure and Function",
+        "topics": ["Prokaryotic vs Eukaryotic Cells", "Cell Organelles", "Membrane Structure", "Transport Mechanisms"]
+      },
+      {
+        "id": "unit3",
+        "name": "Unit 3 – Cellular Energetics",
+        "topics": ["Photosynthesis", "Cellular Respiration", "ATP and Energy", "Fermentation"]
+      },
+      {
+        "id": "unit4",
+        "name": "Unit 4 – Cell Communication and Cell Cycle",
+        "topics": ["Signal Transduction", "Cell Cycle", "Mitosis", "Cancer and Cell Regulation"]
+      },
+      {
+        "id": "unit5",
+        "name": "Unit 5 – Heredity",
+        "topics": ["Meiosis", "Mendelian Genetics", "Punnett Squares", "Non-Mendelian Inheritance", "Chromosomal Inheritance"]
+      },
+      {
+        "id": "unit6",
+        "name": "Unit 6 – Gene Expression and Regulation",
+        "topics": ["DNA Replication", "Transcription", "Translation", "Gene Regulation", "Mutations"]
+      }
+    ]
+  },
+  {
+    "id": "ap-english-lang",
+    "name": "AP English Language",
+    "icon": "✍️",
+    "color": "#f59e0b",
+    "units": [
+      {
+        "id": "unit1",
+        "name": "Unit 1 – Rhetorical Situation",
+        "topics": ["Audience and Purpose", "Speaker and Context", "Exigence", "Rhetorical Appeals"]
+      },
+      {
+        "id": "unit2",
+        "name": "Unit 2 – Claims and Evidence",
+        "topics": ["Types of Claims", "Evidence and Support", "Reasoning and Logic", "Source Evaluation"]
+      },
+      {
+        "id": "unit3",
+        "name": "Unit 3 – Reasoning and Organization",
+        "topics": ["Line of Reasoning", "Thesis Statements", "Paragraph Structure", "Transitions"]
+      },
+      {
+        "id": "unit4",
+        "name": "Unit 4 – Style",
+        "topics": ["Diction and Tone", "Syntax and Sentence Structure", "Figurative Language", "Voice"]
+      }
+    ]
+  },
+  {
+    "id": "ap-us-history",
+    "name": "AP US History",
+    "icon": "🏛️",
+    "color": "#ef4444",
+    "units": [
+      {
+        "id": "unit1",
+        "name": "Unit 1 – Period 1 (1491–1607)",
+        "topics": ["Native American Societies", "European Exploration", "Columbian Exchange", "Spanish Colonization"]
+      },
+      {
+        "id": "unit2",
+        "name": "Unit 2 – Period 2 (1607–1754)",
+        "topics": ["British Colonization", "Colonial Economies", "Slavery in the Colonies", "Colonial Society"]
+      },
+      {
+        "id": "unit3",
+        "name": "Unit 3 – Period 3 (1754–1800)",
+        "topics": ["French and Indian War", "American Revolution", "Articles of Confederation", "Constitution"]
+      },
+      {
+        "id": "unit4",
+        "name": "Unit 4 – Period 4 (1800–1848)",
+        "topics": ["Jeffersonian Democracy", "Market Revolution", "Jacksonian Era", "Reform Movements"]
+      }
+    ]
+  },
+  {
+    "id": "ap-physics",
+    "name": "AP Physics 1",
+    "icon": "⚡",
+    "color": "#8b5cf6",
+    "units": [
+      {
+        "id": "unit1",
+        "name": "Unit 1 – Kinematics",
+        "topics": ["Position and Velocity", "Acceleration", "Motion Graphs", "Projectile Motion"]
+      },
+      {
+        "id": "unit2",
+        "name": "Unit 2 – Dynamics",
+        "topics": ["Newton's Laws", "Friction", "Free Body Diagrams", "Circular Motion"]
+      },
+      {
+        "id": "unit3",
+        "name": "Unit 3 – Energy",
+        "topics": ["Work and Energy", "Conservation of Energy", "Power", "Springs and Potential Energy"]
+      },
+      {
+        "id": "unit4",
+        "name": "Unit 4 – Momentum",
+        "topics": ["Impulse and Momentum", "Conservation of Momentum", "Collisions", "Center of Mass"]
+      }
+    ]
+  }
+]
