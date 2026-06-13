@@ -71,7 +71,7 @@ Return ONLY valid JSON:
 
   try {
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -83,7 +83,22 @@ Return ONLY valid JSON:
     );
 
     const data = await response.json();
+
+    if (data.error) {
+      return new Response(JSON.stringify({ error: `Gemini: ${data.error.message}` }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
     const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "";
+
+    if (!text) {
+      return new Response(JSON.stringify({ error: "AI returned an empty response. Please try again." }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
 
     if (mode === "generate_questions" || mode === "study_plan") {
       const cleaned = text.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
