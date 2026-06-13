@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import MathText from "./MathText.jsx";
 
 export default function QuizEngine({ config, onComplete, onBack }) {
   const [questions, setQuestions] = useState([]);
@@ -25,7 +26,7 @@ export default function QuizEngine({ config, onComplete, onBack }) {
           mode: "generate_questions",
           subject: config.subjectName,
           unit: config.unitName,
-          topic: config.topicName,
+          topic: config.aiTopic || config.topicName,
           difficulty: config.difficulty,
           count: config.count,
         }),
@@ -79,9 +80,10 @@ export default function QuizEngine({ config, onComplete, onBack }) {
       {/* Header */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
         <button className="btn btn-secondary" onClick={onBack}>← Back</button>
-        <div style={{ textAlign: "center" }}>
+        <div style={{ textAlign: "center", maxWidth: 420 }}>
           <div style={{ fontWeight: 700, color: config.color }}>{config.subjectName}</div>
-          <div style={{ fontSize: "0.8rem", color: "var(--muted)" }}>{config.topicName} · {config.difficulty}</div>
+          <div style={{ fontSize: "0.8rem", color: "var(--muted)" }}>{config.unitName}</div>
+          <div style={{ fontSize: "0.8rem", color: "var(--accent2)" }}>{config.topicName} · {config.difficulty}</div>
         </div>
         <div style={{ fontWeight: 700, color: "var(--muted)" }}>{current + 1} / {questions.length}</div>
       </div>
@@ -96,7 +98,7 @@ export default function QuizEngine({ config, onComplete, onBack }) {
         <div style={{ fontSize: "0.8rem", color: "var(--muted)", marginBottom: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>
           Question {current + 1}
         </div>
-        <p style={{ fontSize: "1.05rem", lineHeight: 1.7, fontWeight: 500 }}>{q.question}</p>
+        <p style={{ fontSize: "1.05rem", lineHeight: 1.7, fontWeight: 500 }}><MathText>{q.question}</MathText></p>
       </div>
 
       {/* Options */}
@@ -131,7 +133,7 @@ export default function QuizEngine({ config, onComplete, onBack }) {
               }}>
                 {letter}
               </span>
-              {opt.substring(3)}
+              <MathText>{opt.substring(3)}</MathText>
             </button>
           );
         })}
@@ -169,7 +171,7 @@ function ExplanationPanel({ q, isCorrect, selectedLetter }) {
       {!isCorrect && q.wrongAnswerHelp?.[selectedLetter] && (
         <div style={{ marginBottom: "0.75rem" }}>
           <div style={{ fontWeight: 600, color: "var(--red)", fontSize: "0.85rem", marginBottom: 4 }}>Why your answer was wrong:</div>
-          <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{q.wrongAnswerHelp[selectedLetter]}</p>
+          <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}><MathText>{q.wrongAnswerHelp[selectedLetter]}</MathText></p>
         </div>
       )}
 
@@ -177,7 +179,7 @@ function ExplanationPanel({ q, isCorrect, selectedLetter }) {
         <div style={{ fontWeight: 600, color: "var(--green)", fontSize: "0.85rem", marginBottom: 4 }}>
           {isCorrect ? "Why this is correct:" : `Correct answer (${q.correct}):`}
         </div>
-        <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{q.explanation}</p>
+        <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}><MathText>{q.explanation}</MathText></p>
       </div>
 
       {q.concept && (
@@ -199,7 +201,7 @@ function InfoRow({ icon, label, text }) {
       <span>{icon}</span>
       <div>
         <span style={{ fontWeight: 600, fontSize: "0.8rem", color: "var(--accent2)" }}>{label}: </span>
-        <span style={{ fontSize: "0.85rem", color: "var(--muted)" }}>{text}</span>
+        <span style={{ fontSize: "0.85rem", color: "var(--muted)" }}><MathText>{text}</MathText></span>
       </div>
     </div>
   );

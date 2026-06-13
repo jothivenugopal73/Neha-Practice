@@ -20,7 +20,11 @@ export default async (request) => {
     prompt = `You are an expert AP teacher. Generate exactly ${count} ${difficulty} level multiple choice practice questions for:
 Subject: ${subject}
 Unit: ${unit}
-Topic: ${topic}
+Topic(s): ${topic}
+
+If multiple topics are listed above, distribute the questions roughly evenly across them.
+
+MATH FORMATTING: For any mathematical expressions, use LaTeX wrapped in single dollar signs, e.g. $\\frac{x^3}{y}$ or $\\log_b(x)$. Do this in the question text, all four options, and the explanations.
 
 IMPORTANT: Return ONLY valid JSON. No markdown, no explanation, just the JSON array.
 
@@ -77,7 +81,7 @@ Return ONLY valid JSON:
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { temperature: 0.7, maxOutputTokens: 8192, thinkingConfig: { thinkingBudget: 0 } },
+          generationConfig: { temperature: 0.7, maxOutputTokens: 16384, thinkingConfig: { thinkingBudget: 0 } },
         }),
       }
     );
