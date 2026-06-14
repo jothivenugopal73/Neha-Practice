@@ -55,7 +55,7 @@ const QUESTION_SCHEMA = {
       examTip: { type: "STRING" },
       wrongAnswerHelp: {
         type: "OBJECT",
-        properties: { B: { type: "STRING" }, C: { type: "STRING" }, D: { type: "STRING" } },
+        properties: { A: { type: "STRING" }, B: { type: "STRING" }, C: { type: "STRING" }, D: { type: "STRING" } },
       },
     },
     required: ["question", "options", "correct", "explanation"],
@@ -132,9 +132,21 @@ ${q.question}
 
 ${q.options.join("\n")}
 
-Work it out, then respond with ONLY this JSON (no markdown):
-{"answer":"<A|B|C|D>","confidence":"high|medium|low","reasoning":"one short sentence"}`;
-  const text = await callGemini(VERIFY_MODEL, prompt, { temperature: 0 });
+Work it out, then give your independent answer.`;
+  const text = await callGemini(VERIFY_MODEL, prompt, {
+    temperature: 0,
+    maxOutputTokens: 8192,
+    responseMimeType: "application/json",
+    responseSchema: {
+      type: "OBJECT",
+      properties: {
+        answer: { type: "STRING" },
+        confidence: { type: "STRING" },
+        reasoning: { type: "STRING" },
+      },
+      required: ["answer"],
+    },
+  });
   return parseJSON(text);
 }
 

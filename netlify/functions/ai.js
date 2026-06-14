@@ -30,7 +30,7 @@ export default async (request) => {
         examTip: { type: "STRING" },
         wrongAnswerHelp: {
           type: "OBJECT",
-          properties: { B: { type: "STRING" }, C: { type: "STRING" }, D: { type: "STRING" } },
+          properties: { A: { type: "STRING" }, B: { type: "STRING" }, C: { type: "STRING" }, D: { type: "STRING" } },
         },
       },
       required: ["question", "options", "correct", "explanation"],
@@ -80,13 +80,11 @@ Format:
     "concept": "Key concept to remember",
     "memoryTrick": "Easy way to remember this",
     "examTip": "How this shows up on AP exam",
-    "wrongAnswerHelp": {
-      "B": "Why B is wrong...",
-      "C": "Why C is wrong...",
-      "D": "Why D is wrong..."
-    }
+    "wrongAnswerHelp": { "A": "Why A is wrong...", "B": "...", "C": "...", "D": "..." }
   }
-]`;
+]
+
+CRITICAL: The correct answer can be ANY letter (A, B, C, or D) - vary it naturally, do not always make it A. In wrongAnswerHelp, provide an entry for EACH of the three INCORRECT options (every letter that is NOT the correct answer). Do not include the correct letter in wrongAnswerHelp.`;
   } else if (mode === "tutor_chat") {
     const historyText = (history || [])
       .map((m) => `${m.role === "user" ? "Student" : "Tutor"}: ${m.content}`)

@@ -1,94 +1,321 @@
 {
-  "runAt": "2026-06-13T23:27:11.714Z",
+  "runAt": "2026-06-14T00:11:16.864Z",
   "genModel": "gemini-2.5-flash",
   "verifyModel": "gemini-2.5-pro",
   "summary": {
-    "totalQuestions": 10,
+    "totalQuestions": 23,
     "structurallyValid": 10,
-    "answerAgreement": "10/10 (100%)",
-    "structuralFailures": 0,
+    "answerAgreement": "10/23 (43%)",
+    "structuralFailures": 13,
     "answerMismatches": 0,
     "lowConfidenceAgreements": 0
   },
-  "flagged": [],
-  "all": [
+  "flagged": [
     {
-      "test": {
-        "subject": "AP Precalculus",
-        "unit": "Unit 2 – Exponential and Logarithmic Functions",
-        "topic": "Properties of Logarithms",
-        "difficulty": "Advanced",
-        "count": 5
-      },
-      "error": "Bad escaped character in JSON at position 78 (line 4 column 60)"
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "What is the exact value of $\\cos\\left(\\frac{7\\pi}{6}\\right)$?",
+      "options": [
+        "A) $\\frac{1}{2}$",
+        "B) $-\\frac{1}{2}$",
+        "C) $\\frac{\\sqrt{3}}{2}$",
+        "D) $-\\frac{\\sqrt{3}}{2}$"
+      ],
+      "claimedAnswer": "D",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
     },
     {
       "subject": "AP Precalculus",
       "topic": "Unit Circle",
       "difficulty": "AP Exam Level",
-      "question": "An angle $\\theta$ in standard position has its terminal side passing through the point $(-\\frac{\\sqrt{3}}{2}, -\\frac{1}{2})$ on the unit circle. Which of the following is a possible value for $\\theta$?",
+      "question": "If the terminal side of an angle $\\theta$ in standard position passes through the point $\\left(-\\frac{3}{5}, \\frac{4}{5}\\right)$ on the unit circle, what is the value of $\\tan(\\theta)$?",
+      "options": [
+        "A) $-\\frac{3}{4}$",
+        "B) $\\frac{4}{3}$",
+        "C) $-\\frac{4}{3}$",
+        "D) $\\frac{3}{4}$"
+      ],
+      "claimedAnswer": "C",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "If $\\sin(\\theta) = -\\frac{1}{2}$ and $\\cos(\\theta) > 0$, what is the value of $\\theta$ in the interval $[0, 2\\pi)$?",
       "options": [
         "A) $\\frac{7\\pi}{6}$",
-        "B) $\\frac{5\\pi}{6}$",
+        "B) $\\frac{11\\pi}{6}$",
         "C) $\\frac{4\\pi}{3}$",
-        "D) $\\frac{11\\pi}{6}$"
+        "D) $\\frac{5\\pi}{3}$"
       ],
-      "claimedAnswer": "A",
+      "claimedAnswer": "B",
       "verifiedAnswer": null,
       "verifierConfidence": null,
       "verifierReasoning": null,
-      "structuralIssues": [],
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
       "answerMismatch": false,
-      "flagged": false
+      "flagged": true
     },
     {
       "subject": "AP Precalculus",
       "topic": "Unit Circle",
       "difficulty": "AP Exam Level",
-      "question": "If $\\sin\\theta = -\\frac{\\sqrt{2}}{2}$ and $\\tan\\theta = 1$, what is the value of $\\cos\\theta$?",
+      "question": "A Ferris wheel has a radius of 20 meters and its center is 22 meters above the ground. A rider starts at the lowest point of the wheel. Which of the following equations models the rider's height $h$ (in meters) above the ground as a function of the angle $\\theta$ (in radians) rotated from the lowest point?",
       "options": [
-        "A) $\\frac{\\sqrt{2}}{2}$",
-        "B) $-\\frac{\\sqrt{2}}{2}$",
-        "C) $\\frac{1}{2}$",
-        "D) $-\\frac{1}{2}$"
+        "A) $h(\\theta) = 20\\sin(\\theta) + 22$",
+        "B) $h(\\theta) = -20\\cos(\\theta) + 22$",
+        "C) $h(\\theta) = -20\\cos(\\theta) + 42$",
+        "D) $h(\\theta) = 20\\sin(\\theta) + 42$"
+      ],
+      "claimedAnswer": "C",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A",
+        "missing wrongAnswerHelp for B"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Biology",
+      "topic": "Punnett Squares",
+      "difficulty": "Intermediate",
+      "question": "In a certain species of fish, blue scales (B) are dominant over red scales (b). If a homozygous dominant blue-scaled fish is crossed with a red-scaled fish, what percentage of the F1 generation will have blue scales?",
+      "options": [
+        "A) 0%",
+        "B) 25%",
+        "C) 50%",
+        "D) 100%"
+      ],
+      "claimedAnswer": "D",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Biology",
+      "topic": "Punnett Squares",
+      "difficulty": "Intermediate",
+      "question": "A cross is performed between two individuals, both heterozygous for a single gene (Aa x Aa). What is the probability that an offspring will have the same genotype as the parents?",
+      "options": [
+        "A) $\frac{1}{4}$",
+        "B) $\frac{1}{2}$",
+        "C) $\frac{3}{4}$",
+        "D) $1$"
       ],
       "claimedAnswer": "B",
-      "verifiedAnswer": "B",
-      "verifierConfidence": "high",
-      "verifierReasoning": "Using the identity $\\tan\\theta = \\frac{\\sin\\theta}{\\cos\\theta}$, we can solve for $\\cos\\theta$ as $\\cos\\theta = \\frac{\\sin\\theta}{\\tan\\theta} = \\frac{-\\sqrt{2}/2}{1} = -\\frac{\\sqrt{2}}{2}$.",
-      "structuralIssues": [],
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
       "answerMismatch": false,
-      "flagged": false
+      "flagged": true
     },
     {
-      "subject": "AP Precalculus",
-      "topic": "Unit Circle",
-      "difficulty": "AP Exam Level",
-      "question": "Which of the following angles is coterminal with an angle of $\\frac{2\\pi}{3}$ radians?",
+      "subject": "AP Biology",
+      "topic": "Punnett Squares",
+      "difficulty": "Intermediate",
+      "question": "In humans, the allele for brown eyes (B) is dominant over the allele for blue eyes (b). A brown-eyed man whose mother had blue eyes marries a blue-eyed woman. What is the probability that their first child will have blue eyes?",
       "options": [
-        "A) $-\\frac{4\\pi}{3}$",
-        "B) $\\frac{5\\pi}{3}$",
-        "C) $\\frac{7\\pi}{3}$",
-        "D) $-\\frac{\\pi}{3}$"
+        "A) 0%",
+        "B) 25%",
+        "C) 50%",
+        "D) 75%"
+      ],
+      "claimedAnswer": "C",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Biology",
+      "topic": "Punnett Squares",
+      "difficulty": "Intermediate",
+      "question": "Two genes, A/a and B/b, are located on different chromosomes. A genetic cross is performed between an individual with genotype AaBb and an individual with genotype Aabb. What proportion of the offspring are expected to have the genotype A_bb (where A_ represents either AA or Aa)?",
+      "options": [
+        "A) $\frac{1}{8}$",
+        "B) $\frac{3}{8}$",
+        "C) $\frac{1}{4}$",
+        "D) $\frac{3}{16}$"
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Physics 1",
+      "topic": "Projectile Motion",
+      "difficulty": "Advanced",
+      "question": "A stone is thrown horizontally from the top of a cliff of height $H$ with an initial speed $v_0$. Air resistance is negligible. Which of the following statements is true regarding the stone's motion?",
+      "options": [
+        "A) The time it takes to hit the ground depends on $v_0$.",
+        "B) The horizontal distance traveled depends only on $v_0$.",
+        "C) The vertical acceleration is constant and equal to $g$.",
+        "D) The speed of the stone is constant throughout its flight."
+      ],
+      "claimedAnswer": "C",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Physics 1",
+      "topic": "Projectile Motion",
+      "difficulty": "Advanced",
+      "question": "A ball is launched at an angle of $45^\\circ$ above the horizontal with an initial speed $v_0$. Ignoring air resistance, at what other angle of launch, with the same initial speed $v_0$, would the ball achieve the same horizontal range?",
+      "options": [
+        "A) $30^\\circ$",
+        "B) $60^\\circ$",
+        "C) $75^\\circ$",
+        "D) $90^\\circ$"
+      ],
+      "claimedAnswer": "C",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Physics 1",
+      "topic": "Projectile Motion",
+      "difficulty": "Advanced",
+      "question": "A projectile is launched with an initial velocity vector $\\vec{v}_0 = (30 \\hat{i} + 40 \\hat{j})$ m/s from the ground. Assuming $g = 10$ m/s$^2$ and neglecting air resistance, what is the maximum height achieved by the projectile?",
+      "options": [
+        "A) $40$ m",
+        "B) $80$ m",
+        "C) $120$ m",
+        "D) $160$ m"
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP US History",
+      "topic": "American Revolution",
+      "difficulty": "Intermediate",
+      "question": "The Sons of Liberty were a significant force in the American Revolution primarily because they:",
+      "options": [
+        "A) Successfully negotiated with British officials to repeal unfair taxes.",
+        "B) Organized boycotts and used intimidation to protest British policies.",
+        "C) Served as the primary military force against British troops in early skirmishes.",
+        "D) Drafted the Declaration of Independence and other key revolutionary documents."
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP US History",
+      "topic": "American Revolution",
+      "difficulty": "Intermediate",
+      "question": "Which of the following best describes the primary argument of Thomas Paine's 'Common Sense'?",
+      "options": [
+        "A) It advocated for reconciliation with Great Britain under certain conditions.",
+        "B) It argued for the inherent superiority of monarchy as a form of government.",
+        "C) It called for immediate independence from British rule and the establishment of a republican government.",
+        "D) It primarily focused on the economic benefits of remaining within the British Empire."
+      ],
+      "claimedAnswer": "C",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    }
+  ],
+  "all": [
+    {
+      "subject": "AP Precalculus",
+      "topic": "Properties of Logarithms",
+      "difficulty": "Advanced",
+      "question": "Which of the following expressions is equivalent to $\\log_b\\left(\\frac{x^3\\sqrt{y}}{z^4}\\right)$?",
+      "options": [
+        "A) $3\\log_b x + \\frac{1}{2}\\log_b y - 4\\log_b z$",
+        "B) $\\frac{3}{2}\\log_b(xy) - 4\\log_b z$",
+        "C) $3\\log_b x + 2\\log_b y - 4\\log_b z$",
+        "D) $\\log_b(3x) + \\log_b\\left(\\frac{1}{2}y\\right) - \\log_b(4z)$"
       ],
       "claimedAnswer": "A",
       "verifiedAnswer": "A",
       "verifierConfidence": "high",
-      "verifierReasoning": "Coterminal angles differ by an integer multiple of 2π, and subtracting 2π from the given angle yields the angle in option A:  (2π/3) - 2π = (2π/3) - (6π/3) = -4π/3.",
+      "verifierReasoning": "The expression is expanded by applying the quotient, product, and power rules for logarithms in sequence.",
       "structuralIssues": [],
       "answerMismatch": false,
       "flagged": false
     },
     {
       "subject": "AP Precalculus",
-      "topic": "Unit Circle",
-      "difficulty": "AP Exam Level",
-      "question": "What are the coordinates of the point on the unit circle that corresponds to an angle of $\\frac{5\\pi}{4}$ radians?",
+      "topic": "Properties of Logarithms",
+      "difficulty": "Advanced",
+      "question": "Given $\\log_5 2 = A$ and $\\log_5 3 = B$, express $\\log_5 72$ in terms of $A$ and $B$.",
       "options": [
-        "A) $(-\\frac{\\sqrt{2}}{2}, -\\frac{\\sqrt{2}}{2})$",
-        "B) $(\\frac{\\sqrt{2}}{2}, -\\frac{\\sqrt{2}}{2})$",
-        "C) $(-\\frac{1}{2}, -\\frac{\\sqrt{3}}{2})$",
-        "D) $(-\\frac{\\sqrt{3}}{2}, -\\frac{1}{2})$"
+        "A) $3A + 2B$",
+        "B) $A^3 B^2$",
+        "C) $2A + 3B$",
+        "D) $A + B + 70$"
       ],
       "claimedAnswer": "A",
       "verifiedAnswer": null,
@@ -100,58 +327,365 @@
     },
     {
       "subject": "AP Precalculus",
-      "topic": "Unit Circle",
-      "difficulty": "AP Exam Level",
-      "question": "If an angle $\\alpha$ in standard position has its terminal side in Quadrant II and $\\cos\\alpha = -\\frac{3}{5}$, what is the value of $\\sin\\alpha$?",
+      "topic": "Properties of Logarithms",
+      "difficulty": "Advanced",
+      "question": "Simplify the expression: $\\log_2 16^{x+1} - \\log_2 4^{x-1}$",
       "options": [
-        "A) $\\frac{4}{5}$",
-        "B) $-\\frac{4}{5}$",
-        "C) $\\frac{3}{5}$",
-        "D) $-\\frac{3}{5}$"
-      ],
-      "claimedAnswer": "A",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [],
-      "answerMismatch": false,
-      "flagged": false
-    },
-    {
-      "test": {
-        "subject": "AP Biology",
-        "unit": "Unit 5 – Heredity",
-        "topic": "Punnett Squares",
-        "difficulty": "Intermediate",
-        "count": 5
-      },
-      "error": "Bad escaped character in JSON at position 3366 (line 29 column 39)"
-    },
-    {
-      "test": {
-        "subject": "AP Physics 1",
-        "unit": "Unit 1 – Kinematics",
-        "topic": "Projectile Motion",
-        "difficulty": "Advanced",
-        "count": 5
-      },
-      "error": "Bad escaped character in JSON at position 355 (line 6 column 33)"
-    },
-    {
-      "subject": "AP US History",
-      "topic": "American Revolution",
-      "difficulty": "Intermediate",
-      "question": "Which of the following acts passed by the British Parliament after the French and Indian War most directly contributed to the colonial demand for \"no taxation without representation\"?",
-      "options": [
-        "A) The Stamp Act of 1765",
-        "B) The Declaratory Act of 1766",
-        "C) The Quartering Act of 1765",
-        "D) The Tea Act of 1773"
+        "A) $2x+6$",
+        "B) $x+5$",
+        "C) $2x-2$",
+        "D) $4x+2$"
       ],
       "claimedAnswer": "A",
       "verifiedAnswer": "A",
       "verifierConfidence": "high",
-      "verifierReasoning": "The Stamp Act was the first direct tax levied by Parliament on the colonies for the purpose of raising revenue, which directly sparked the widespread colonial protest slogan, \"no taxation without representation.\"",
+      "verifierReasoning": "The expression simplifies to $(x+1)\\log_2 16 - (x-1)\\log_2 4$, which becomes $4(x+1) - 2(x-1)$, and further simplifies to $4x+4 - 2x+2 = 2x+6$.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Properties of Logarithms",
+      "difficulty": "Advanced",
+      "question": "If $\\log_3 x = 2.5$ and $\\log_3 y = 1.5$, what is the value of $\\log_3 \\left(\\frac{x^2}{y}\\right)$?",
+      "options": [
+        "A) 3.5",
+        "B) 7.5",
+        "C) 1.5",
+        "D) 5.0"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": "A",
+      "verifierConfidence": "high",
+      "verifierReasoning": "Using the properties of logarithms, the expression simplifies to $2 \\log_3 x - \\log_3 y$, which evaluates to $2(2.5) - 1.5 = 5 - 1.5 = 3.5$.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Properties of Logarithms",
+      "difficulty": "Advanced",
+      "question": "Which of the following is equivalent to $\\frac{1}{3}\\log(x) - 2\\log(y) + \\log(z)$?",
+      "options": [
+        "A) $\\log\\left(\\frac{z\\sqrt[3]{x}}{y^2}\\right)$",
+        "B) $\\log\\left(\\frac{xz^{1/3}}{y^2}\\right)$",
+        "C) $\\log\\left(\\frac{z x^3}{y^2}\\right)$",
+        "D) $\\log\\left(\\frac{\\sqrt[3]{x}}{2yz}\\right)$"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": "A",
+      "verifierConfidence": "high",
+      "verifierReasoning": "Using logarithm properties, the expression becomes log(x^(1/3)) - log(y^2) + log(z), which combines to log((z * x^(1/3)) / y^2), equivalent to log((z * cube_root(x)) / y^2).",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "What is the exact value of $\\cos\\left(\\frac{7\\pi}{6}\\right)$?",
+      "options": [
+        "A) $\\frac{1}{2}$",
+        "B) $-\\frac{1}{2}$",
+        "C) $\\frac{\\sqrt{3}}{2}$",
+        "D) $-\\frac{\\sqrt{3}}{2}$"
+      ],
+      "claimedAnswer": "D",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "If the terminal side of an angle $\\theta$ in standard position passes through the point $\\left(-\\frac{3}{5}, \\frac{4}{5}\\right)$ on the unit circle, what is the value of $\\tan(\\theta)$?",
+      "options": [
+        "A) $-\\frac{3}{4}$",
+        "B) $\\frac{4}{3}$",
+        "C) $-\\frac{4}{3}$",
+        "D) $\\frac{3}{4}$"
+      ],
+      "claimedAnswer": "C",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "Which of the following angles is coterminal with $\\frac{5\\pi}{4}$?",
+      "options": [
+        "A) $-\\frac{3\\pi}{4}$",
+        "B) $\\frac{\\pi}{4}$",
+        "C) $\\frac{9\\pi}{4}$",
+        "D) $-\\frac{5\\pi}{4}$"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": "A",
+      "verifierConfidence": "high",
+      "verifierReasoning": "Coterminal angles differ by integer multiples of 2π, and subtracting 2π from the given angle yields the angle in option A:  (5π/4) - 2π = (5π/4) - (8π/4) = -3π/4.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "If $\\sin(\\theta) = -\\frac{1}{2}$ and $\\cos(\\theta) > 0$, what is the value of $\\theta$ in the interval $[0, 2\\pi)$?",
+      "options": [
+        "A) $\\frac{7\\pi}{6}$",
+        "B) $\\frac{11\\pi}{6}$",
+        "C) $\\frac{4\\pi}{3}$",
+        "D) $\\frac{5\\pi}{3}$"
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "A Ferris wheel has a radius of 20 meters and its center is 22 meters above the ground. A rider starts at the lowest point of the wheel. Which of the following equations models the rider's height $h$ (in meters) above the ground as a function of the angle $\\theta$ (in radians) rotated from the lowest point?",
+      "options": [
+        "A) $h(\\theta) = 20\\sin(\\theta) + 22$",
+        "B) $h(\\theta) = -20\\cos(\\theta) + 22$",
+        "C) $h(\\theta) = -20\\cos(\\theta) + 42$",
+        "D) $h(\\theta) = 20\\sin(\\theta) + 42$"
+      ],
+      "claimedAnswer": "C",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A",
+        "missing wrongAnswerHelp for B"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Biology",
+      "topic": "Punnett Squares",
+      "difficulty": "Intermediate",
+      "question": "In pea plants, tallness (T) is dominant over dwarfness (t), and purple flowers (P) are dominant over white flowers (p). If a dihybrid cross is performed between two pea plants heterozygous for both traits (TtPp x TtPp), what is the expected phenotypic ratio of tall, purple plants to tall, white plants to dwarf, purple plants to dwarf, white plants?",
+      "options": [
+        "A) 9:3:3:1",
+        "B) 1:1:1:1",
+        "C) 3:1:3:1",
+        "D) 9:3:1:1"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": "A",
+      "verifierConfidence": "high",
+      "verifierReasoning": "A dihybrid cross between two parents heterozygous for both traits (TtPp x TtPp) classically yields a 9:3:3:1 phenotypic ratio due to Mendelian independent assortment.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Biology",
+      "topic": "Punnett Squares",
+      "difficulty": "Intermediate",
+      "question": "In a certain species of fish, blue scales (B) are dominant over red scales (b). If a homozygous dominant blue-scaled fish is crossed with a red-scaled fish, what percentage of the F1 generation will have blue scales?",
+      "options": [
+        "A) 0%",
+        "B) 25%",
+        "C) 50%",
+        "D) 100%"
+      ],
+      "claimedAnswer": "D",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Biology",
+      "topic": "Punnett Squares",
+      "difficulty": "Intermediate",
+      "question": "A cross is performed between two individuals, both heterozygous for a single gene (Aa x Aa). What is the probability that an offspring will have the same genotype as the parents?",
+      "options": [
+        "A) $\frac{1}{4}$",
+        "B) $\frac{1}{2}$",
+        "C) $\frac{3}{4}$",
+        "D) $1$"
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Biology",
+      "topic": "Punnett Squares",
+      "difficulty": "Intermediate",
+      "question": "In humans, the allele for brown eyes (B) is dominant over the allele for blue eyes (b). A brown-eyed man whose mother had blue eyes marries a blue-eyed woman. What is the probability that their first child will have blue eyes?",
+      "options": [
+        "A) 0%",
+        "B) 25%",
+        "C) 50%",
+        "D) 75%"
+      ],
+      "claimedAnswer": "C",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Biology",
+      "topic": "Punnett Squares",
+      "difficulty": "Intermediate",
+      "question": "Two genes, A/a and B/b, are located on different chromosomes. A genetic cross is performed between an individual with genotype AaBb and an individual with genotype Aabb. What proportion of the offspring are expected to have the genotype A_bb (where A_ represents either AA or Aa)?",
+      "options": [
+        "A) $\frac{1}{8}$",
+        "B) $\frac{3}{8}$",
+        "C) $\frac{1}{4}$",
+        "D) $\frac{3}{16}$"
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Physics 1",
+      "topic": "Projectile Motion",
+      "difficulty": "Advanced",
+      "question": "A projectile is launched from the ground with an initial velocity $v_0$ at an angle $\\theta$ above the horizontal. At the highest point of its trajectory, the magnitude of its velocity is $v_0 \\cos\\theta$. What is the ratio of its kinetic energy at the highest point to its initial kinetic energy?",
+      "options": [
+        "A) $\\cos^2\\theta$",
+        "B) $\\cos\\theta$",
+        "C) $1 - \\sin^2\\theta$",
+        "D) $\\frac{1}{2}\\cos^2\\theta$"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Physics 1",
+      "topic": "Projectile Motion",
+      "difficulty": "Advanced",
+      "question": "A stone is thrown horizontally from the top of a cliff of height $H$ with an initial speed $v_0$. Air resistance is negligible. Which of the following statements is true regarding the stone's motion?",
+      "options": [
+        "A) The time it takes to hit the ground depends on $v_0$.",
+        "B) The horizontal distance traveled depends only on $v_0$.",
+        "C) The vertical acceleration is constant and equal to $g$.",
+        "D) The speed of the stone is constant throughout its flight."
+      ],
+      "claimedAnswer": "C",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Physics 1",
+      "topic": "Projectile Motion",
+      "difficulty": "Advanced",
+      "question": "A ball is launched at an angle of $45^\\circ$ above the horizontal with an initial speed $v_0$. Ignoring air resistance, at what other angle of launch, with the same initial speed $v_0$, would the ball achieve the same horizontal range?",
+      "options": [
+        "A) $30^\\circ$",
+        "B) $60^\\circ$",
+        "C) $75^\\circ$",
+        "D) $90^\\circ$"
+      ],
+      "claimedAnswer": "C",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Physics 1",
+      "topic": "Projectile Motion",
+      "difficulty": "Advanced",
+      "question": "A projectile is launched with an initial velocity vector $\\vec{v}_0 = (30 \\hat{i} + 40 \\hat{j})$ m/s from the ground. Assuming $g = 10$ m/s$^2$ and neglecting air resistance, what is the maximum height achieved by the projectile?",
+      "options": [
+        "A) $40$ m",
+        "B) $80$ m",
+        "C) $120$ m",
+        "D) $160$ m"
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
+      "answerMismatch": false,
+      "flagged": true
+    },
+    {
+      "subject": "AP Physics 1",
+      "topic": "Projectile Motion",
+      "difficulty": "Advanced",
+      "question": "A cannonball is fired from a cliff of height $h$ with an initial speed $v_0$ at an angle $\\theta$ above the horizontal. Which of the following expressions correctly represents the time it takes for the cannonball to reach its maximum height?",
+      "options": [
+        "A) $t = \\frac{v_0 \\sin\\theta}{g}$",
+        "B) $t = \\frac{v_0 \\cos\\theta}{g}$",
+        "C) $t = \\frac{2v_0 \\sin\\theta}{g}$",
+        "D) $t = \\frac{v_0^2 \\sin(2\\theta)}{g}$"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": "A",
+      "verifierConfidence": "high",
+      "verifierReasoning": "The time to reach maximum height is determined by the vertical motion, where the final vertical velocity is zero; using the kinematic equation $v_y = v_{0y} + a_y t$, we get $0 = v_0 \\sin\\theta - gt$, which solves to $t = \\frac{v_0 \\sin\\theta}{g}$.",
       "structuralIssues": [],
       "answerMismatch": false,
       "flagged": false
@@ -160,17 +694,17 @@
       "subject": "AP US History",
       "topic": "American Revolution",
       "difficulty": "Intermediate",
-      "question": "The primary purpose of the Committees of Correspondence, established in the American colonies in the 1770s, was to:",
+      "question": "Which of the following acts passed by the British Parliament after the French and Indian War was specifically designed to raise revenue to help defray the costs of maintaining troops in the colonies?",
       "options": [
-        "A) Negotiate directly with Native American tribes for land cessions.",
-        "B) Coordinate colonial resistance against British policies.",
-        "C) Draft a new constitution for the united colonies.",
-        "D) Fund and supply the Continental Army prior to the Declaration of Independence."
+        "A) The Stamp Act",
+        "B) The Declaratory Act",
+        "C) The Quartering Act",
+        "D) The Townshend Acts"
       ],
-      "claimedAnswer": "B",
-      "verifiedAnswer": "B",
+      "claimedAnswer": "A",
+      "verifiedAnswer": "A",
       "verifierConfidence": "high",
-      "verifierReasoning": "The Committees of Correspondence were a network for communication and mobilization among the colonies to share information and coordinate a unified response to British policies.",
+      "verifierReasoning": "The Stamp Act of 1765 was the first direct tax imposed on the American colonies with the specific, stated purpose of raising revenue to help pay for the British troops stationed there after the French and Indian War.",
       "structuralIssues": [],
       "answerMismatch": false,
       "flagged": false
@@ -179,58 +713,43 @@
       "subject": "AP US History",
       "topic": "American Revolution",
       "difficulty": "Intermediate",
-      "question": "Which of the following intellectual movements most directly influenced the Declaration of Independence's articulation of unalienable rights and the social contract theory?",
+      "question": "The Sons of Liberty were a significant force in the American Revolution primarily because they:",
       "options": [
-        "A) The Great Awakening",
-        "B) The Enlightenment",
-        "C) Mercantilism",
-        "D) Republican Motherhood"
+        "A) Successfully negotiated with British officials to repeal unfair taxes.",
+        "B) Organized boycotts and used intimidation to protest British policies.",
+        "C) Served as the primary military force against British troops in early skirmishes.",
+        "D) Drafted the Declaration of Independence and other key revolutionary documents."
       ],
       "claimedAnswer": "B",
-      "verifiedAnswer": "B",
-      "verifierConfidence": "high",
-      "verifierReasoning": "The Enlightenment, particularly the philosophy of John Locke, directly supplied the core concepts of natural (unalienable) rights and the social contract theory that Thomas Jefferson articulated in the Declaration of Independence.",
-      "structuralIssues": [],
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
+      ],
       "answerMismatch": false,
-      "flagged": false
+      "flagged": true
     },
     {
       "subject": "AP US History",
       "topic": "American Revolution",
       "difficulty": "Intermediate",
-      "question": "The Battle of Saratoga (1777) was a turning point in the American Revolution primarily because it:",
+      "question": "Which of the following best describes the primary argument of Thomas Paine's 'Common Sense'?",
       "options": [
-        "A) Led to the immediate surrender of British forces in North America.",
-        "B) Convinced France to form a military alliance with the United States.",
-        "C) Resulted in the British abandoning their southern strategy.",
-        "D) Secured American control over the Ohio River Valley."
+        "A) It advocated for reconciliation with Great Britain under certain conditions.",
+        "B) It argued for the inherent superiority of monarchy as a form of government.",
+        "C) It called for immediate independence from British rule and the establishment of a republican government.",
+        "D) It primarily focused on the economic benefits of remaining within the British Empire."
       ],
-      "claimedAnswer": "B",
-      "verifiedAnswer": "B",
-      "verifierConfidence": "high",
-      "verifierReasoning": "The decisive American victory at Saratoga proved the colonists could win a major battle, which convinced France to formally enter the war as an American ally.",
-      "structuralIssues": [],
-      "answerMismatch": false,
-      "flagged": false
-    },
-    {
-      "subject": "AP US History",
-      "topic": "American Revolution",
-      "difficulty": "Intermediate",
-      "question": "Following the American Revolution, the Treaty of Paris (1783) established the western boundary of the United States at the:",
-      "options": [
-        "A) Appalachian Mountains",
-        "B) Mississippi River",
-        "C) Rocky Mountains",
-        "D) Great Lakes"
+      "claimedAnswer": "C",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [
+        "missing wrongAnswerHelp for A"
       ],
-      "claimedAnswer": "B",
-      "verifiedAnswer": "B",
-      "verifierConfidence": "high",
-      "verifierReasoning": "The 1783 Treaty of Paris, which ended the American Revolution, ceded British territory east of the Mississippi River to the newly formed United States.",
-      "structuralIssues": [],
       "answerMismatch": false,
-      "flagged": false
+      "flagged": true
     }
   ]
 }
