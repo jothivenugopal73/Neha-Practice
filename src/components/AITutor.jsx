@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import MathText from "./MathText.jsx";
 
 const SUGGESTIONS = [
   "Explain the difference between mitosis and meiosis",
@@ -96,7 +97,7 @@ export default function AITutor() {
               border: m.role === "assistant" ? "1px solid var(--border)" : "none",
               whiteSpace: "pre-wrap",
             }}>
-              {m.content}
+              {m.role === "assistant" ? <MathText>{m.content}</MathText> : m.content}
             </div>
           </div>
         ))}
