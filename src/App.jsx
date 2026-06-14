@@ -5,6 +5,7 @@ import QuizEngine from "./components/QuizEngine.jsx";
 import AITutor from "./components/AITutor.jsx";
 import Progress from "./components/Progress.jsx";
 import Profile from "./components/Profile.jsx";
+import Materials from "./components/Materials.jsx";
 import Onboarding from "./components/Onboarding.jsx";
 import Nav from "./components/Nav.jsx";
 
@@ -18,6 +19,7 @@ const defaultData = {
   lastStudyDate: null,
   totalQuestions: 0,
   badges: [],
+  materials: [],
 };
 
 export default function App() {
@@ -90,7 +92,14 @@ export default function App() {
           <Dashboard data={data} onStartQuiz={startQuiz} setScreen={setScreen} />
         )}
         {screen === "practice" && (
-          <CourseSelector onStartQuiz={startQuiz} />
+          <CourseSelector onStartQuiz={startQuiz} materials={data.materials} />
+        )}
+        {screen === "materials" && (
+          <Materials
+            materials={data.materials}
+            onAdd={(m) => updateData({ materials: [...data.materials, m] })}
+            onDelete={(id) => updateData({ materials: data.materials.filter((x) => x.id !== id) })}
+          />
         )}
         {screen === "quiz" && quizConfig && (
           <QuizEngine
