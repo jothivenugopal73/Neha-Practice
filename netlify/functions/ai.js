@@ -14,6 +14,47 @@ export default async (request) => {
   const body = await request.json();
   const { mode, subject, unit, topic, difficulty, count, question, history } = body;
 
+  // Schemas force the API to return guaranteed-valid JSON (no parse failures,
+  // backslashes/control chars escaped correctly even for LaTeX math).
+  const QUESTION_SCHEMA = {
+    type: "ARRAY",
+    items: {
+      type: "OBJECT",
+      properties: {
+        question: { type: "STRING" },
+        options: { type: "ARRAY", items: { type: "STRING" } },
+        correct: { type: "STRING" },
+        explanation: { type: "STRING" },
+        concept: { type: "STRING" },
+        memoryTrick: { type: "STRING" },
+        examTip: { type: "STRING" },
+        wrongAnswerHelp: {
+          type: "OBJECT",
+          properties: { B: { type: "STRING" }, C: { type: "STRING" }, D: { type: "STRING" } },
+        },
+      },
+      required: ["question", "options", "correct", "explanation"],
+    },
+  };
+
+  const PLAN_SCHEMA = {
+    type: "OBJECT",
+    properties: {
+      plan: {
+        type: "ARRAY",
+        items: {
+          type: "OBJECT",
+          properties: {
+            day: { type: "NUMBER" },
+            title: { type: "STRING" },
+            tasks: { type: "ARRAY", items: { type: "STRING" } },
+            focus: { type: "STRING" },
+          },
+        },
+      },
+    },
+  };
+
   let prompt = "";
 
   if (mode === "generate_questions") {
@@ -73,6 +114,15 @@ Return ONLY valid JSON:
 }`;
   }
 
+  const generationConfig = { temperature: 0.7, maxOutputTokens: 16384, thinkingConfig: { thinkingBudget: 0 } };
+  if (mode === "generate_questions") {
+    generationConfig.responseMimeType = "application/json";
+    generationConfig.responseSchema = QUESTION_SCHEMA;
+  } else if (mode === "study_plan") {
+    generationConfig.responseMimeType = "application/json";
+    generationConfig.responseSchema = PLAN_SCHEMA;
+  }
+
   try {
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
@@ -81,7 +131,7 @@ Return ONLY valid JSON:
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { temperature: 0.7, maxOutputTokens: 16384, thinkingConfig: { thinkingBudget: 0 } },
+          generationConfig,
         }),
       }
     );

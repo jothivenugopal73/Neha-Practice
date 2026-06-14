@@ -1,0 +1,236 @@
+{
+  "runAt": "2026-06-13T23:27:11.714Z",
+  "genModel": "gemini-2.5-flash",
+  "verifyModel": "gemini-2.5-pro",
+  "summary": {
+    "totalQuestions": 10,
+    "structurallyValid": 10,
+    "answerAgreement": "10/10 (100%)",
+    "structuralFailures": 0,
+    "answerMismatches": 0,
+    "lowConfidenceAgreements": 0
+  },
+  "flagged": [],
+  "all": [
+    {
+      "test": {
+        "subject": "AP Precalculus",
+        "unit": "Unit 2 – Exponential and Logarithmic Functions",
+        "topic": "Properties of Logarithms",
+        "difficulty": "Advanced",
+        "count": 5
+      },
+      "error": "Bad escaped character in JSON at position 78 (line 4 column 60)"
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "An angle $\\theta$ in standard position has its terminal side passing through the point $(-\\frac{\\sqrt{3}}{2}, -\\frac{1}{2})$ on the unit circle. Which of the following is a possible value for $\\theta$?",
+      "options": [
+        "A) $\\frac{7\\pi}{6}$",
+        "B) $\\frac{5\\pi}{6}$",
+        "C) $\\frac{4\\pi}{3}$",
+        "D) $\\frac{11\\pi}{6}$"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "If $\\sin\\theta = -\\frac{\\sqrt{2}}{2}$ and $\\tan\\theta = 1$, what is the value of $\\cos\\theta$?",
+      "options": [
+        "A) $\\frac{\\sqrt{2}}{2}$",
+        "B) $-\\frac{\\sqrt{2}}{2}$",
+        "C) $\\frac{1}{2}$",
+        "D) $-\\frac{1}{2}$"
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": "B",
+      "verifierConfidence": "high",
+      "verifierReasoning": "Using the identity $\\tan\\theta = \\frac{\\sin\\theta}{\\cos\\theta}$, we can solve for $\\cos\\theta$ as $\\cos\\theta = \\frac{\\sin\\theta}{\\tan\\theta} = \\frac{-\\sqrt{2}/2}{1} = -\\frac{\\sqrt{2}}{2}$.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "Which of the following angles is coterminal with an angle of $\\frac{2\\pi}{3}$ radians?",
+      "options": [
+        "A) $-\\frac{4\\pi}{3}$",
+        "B) $\\frac{5\\pi}{3}$",
+        "C) $\\frac{7\\pi}{3}$",
+        "D) $-\\frac{\\pi}{3}$"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": "A",
+      "verifierConfidence": "high",
+      "verifierReasoning": "Coterminal angles differ by an integer multiple of 2π, and subtracting 2π from the given angle yields the angle in option A:  (2π/3) - 2π = (2π/3) - (6π/3) = -4π/3.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "What are the coordinates of the point on the unit circle that corresponds to an angle of $\\frac{5\\pi}{4}$ radians?",
+      "options": [
+        "A) $(-\\frac{\\sqrt{2}}{2}, -\\frac{\\sqrt{2}}{2})$",
+        "B) $(\\frac{\\sqrt{2}}{2}, -\\frac{\\sqrt{2}}{2})$",
+        "C) $(-\\frac{1}{2}, -\\frac{\\sqrt{3}}{2})$",
+        "D) $(-\\frac{\\sqrt{3}}{2}, -\\frac{1}{2})$"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "If an angle $\\alpha$ in standard position has its terminal side in Quadrant II and $\\cos\\alpha = -\\frac{3}{5}$, what is the value of $\\sin\\alpha$?",
+      "options": [
+        "A) $\\frac{4}{5}$",
+        "B) $-\\frac{4}{5}$",
+        "C) $\\frac{3}{5}$",
+        "D) $-\\frac{3}{5}$"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": null,
+      "verifierConfidence": null,
+      "verifierReasoning": null,
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "test": {
+        "subject": "AP Biology",
+        "unit": "Unit 5 – Heredity",
+        "topic": "Punnett Squares",
+        "difficulty": "Intermediate",
+        "count": 5
+      },
+      "error": "Bad escaped character in JSON at position 3366 (line 29 column 39)"
+    },
+    {
+      "test": {
+        "subject": "AP Physics 1",
+        "unit": "Unit 1 – Kinematics",
+        "topic": "Projectile Motion",
+        "difficulty": "Advanced",
+        "count": 5
+      },
+      "error": "Bad escaped character in JSON at position 355 (line 6 column 33)"
+    },
+    {
+      "subject": "AP US History",
+      "topic": "American Revolution",
+      "difficulty": "Intermediate",
+      "question": "Which of the following acts passed by the British Parliament after the French and Indian War most directly contributed to the colonial demand for \"no taxation without representation\"?",
+      "options": [
+        "A) The Stamp Act of 1765",
+        "B) The Declaratory Act of 1766",
+        "C) The Quartering Act of 1765",
+        "D) The Tea Act of 1773"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": "A",
+      "verifierConfidence": "high",
+      "verifierReasoning": "The Stamp Act was the first direct tax levied by Parliament on the colonies for the purpose of raising revenue, which directly sparked the widespread colonial protest slogan, \"no taxation without representation.\"",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP US History",
+      "topic": "American Revolution",
+      "difficulty": "Intermediate",
+      "question": "The primary purpose of the Committees of Correspondence, established in the American colonies in the 1770s, was to:",
+      "options": [
+        "A) Negotiate directly with Native American tribes for land cessions.",
+        "B) Coordinate colonial resistance against British policies.",
+        "C) Draft a new constitution for the united colonies.",
+        "D) Fund and supply the Continental Army prior to the Declaration of Independence."
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": "B",
+      "verifierConfidence": "high",
+      "verifierReasoning": "The Committees of Correspondence were a network for communication and mobilization among the colonies to share information and coordinate a unified response to British policies.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP US History",
+      "topic": "American Revolution",
+      "difficulty": "Intermediate",
+      "question": "Which of the following intellectual movements most directly influenced the Declaration of Independence's articulation of unalienable rights and the social contract theory?",
+      "options": [
+        "A) The Great Awakening",
+        "B) The Enlightenment",
+        "C) Mercantilism",
+        "D) Republican Motherhood"
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": "B",
+      "verifierConfidence": "high",
+      "verifierReasoning": "The Enlightenment, particularly the philosophy of John Locke, directly supplied the core concepts of natural (unalienable) rights and the social contract theory that Thomas Jefferson articulated in the Declaration of Independence.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP US History",
+      "topic": "American Revolution",
+      "difficulty": "Intermediate",
+      "question": "The Battle of Saratoga (1777) was a turning point in the American Revolution primarily because it:",
+      "options": [
+        "A) Led to the immediate surrender of British forces in North America.",
+        "B) Convinced France to form a military alliance with the United States.",
+        "C) Resulted in the British abandoning their southern strategy.",
+        "D) Secured American control over the Ohio River Valley."
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": "B",
+      "verifierConfidence": "high",
+      "verifierReasoning": "The decisive American victory at Saratoga proved the colonists could win a major battle, which convinced France to formally enter the war as an American ally.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP US History",
+      "topic": "American Revolution",
+      "difficulty": "Intermediate",
+      "question": "Following the American Revolution, the Treaty of Paris (1783) established the western boundary of the United States at the:",
+      "options": [
+        "A) Appalachian Mountains",
+        "B) Mississippi River",
+        "C) Rocky Mountains",
+        "D) Great Lakes"
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": "B",
+      "verifierConfidence": "high",
+      "verifierReasoning": "The 1783 Treaty of Paris, which ended the American Revolution, ceded British territory east of the Mississippi River to the newly formed United States.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    }
+  ]
+}
