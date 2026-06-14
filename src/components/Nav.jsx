@@ -1,6 +1,7 @@
 const links = [
   { id: "dashboard", icon: "🏠", label: "Dashboard" },
   { id: "practice", icon: "📚", label: "Practice" },
+  { id: "materials", icon: "📂", label: "My Materials" },
   { id: "tutor", icon: "🤖", label: "AI Tutor" },
   { id: "progress", icon: "📈", label: "Progress" },
   { id: "profile", icon: "👤", label: "Profile" },

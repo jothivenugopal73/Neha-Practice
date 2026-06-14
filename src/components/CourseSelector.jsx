@@ -4,7 +4,7 @@ import courses from "../../courses.json";
 const DIFFICULTIES = ["Beginner", "Intermediate", "Advanced", "AP Exam Level"];
 const COUNTS = [5, 10, 20];
 
-export default function CourseSelector({ onStartQuiz }) {
+export default function CourseSelector({ onStartQuiz, materials = [] }) {
   const [step, setStep] = useState("course");
   const [sel, setSel] = useState({
     course: null,
@@ -12,6 +12,7 @@ export default function CourseSelector({ onStartQuiz }) {
     topic: null,      // single topic (only when drilling into one unit)
     difficulty: "Intermediate",
     count: 10,
+    source: "ai",     // "ai" | "materials" | "blend"
   });
 
   const set = (k, v) => setSel((p) => ({ ...p, [k]: v }));
@@ -24,28 +25,40 @@ export default function CourseSelector({ onStartQuiz }) {
     });
   };
 
+  // Materials saved for the currently selected subject
+  const subjectMaterials = (courseId) => materials.filter((m) => m.subjectId === courseId);
+
   // Build the config object passed to the quiz
   const buildConfig = (mode) => {
     const course = sel.course;
+    const mats = subjectMaterials(course.id);
+    const effectiveSource = mats.length === 0 ? "ai" : sel.source;
+    const sourceText =
+      effectiveSource === "ai" ? "" : mats.map((m) => `### ${m.name}\n${m.text}`).join("\n\n");
+
+    const base = {
+      subjectId: course.id, subjectName: course.name, color: course.color,
+      difficulty: sel.difficulty, count: sel.count,
+      source: effectiveSource, sourceText,
+    };
+
     if (mode === "topic") {
       const unit = sel.units[0];
       return {
-        subjectId: course.id, subjectName: course.name, color: course.color,
+        ...base,
         unitId: unit.id, unitName: unit.name,
         topicId: sel.topic, topicName: sel.topic,
         aiTopic: sel.topic,
-        difficulty: sel.difficulty, count: sel.count,
       };
     }
     // multi-unit (whole units)
     const allTopics = sel.units.flatMap((u) => u.topics);
     const unitLabel = sel.units.length === 1 ? sel.units[0].name : `${sel.units.length} units`;
     return {
-      subjectId: course.id, subjectName: course.name, color: course.color,
+      ...base,
       unitId: sel.units.map((u) => u.id).join("+"), unitName: unitLabel,
       topicId: "mixed", topicName: sel.units.length === 1 ? "All topics" : "Mixed topics",
       aiTopic: allTopics.join(", "),
-      difficulty: sel.difficulty, count: sel.count,
     };
   };
 
@@ -188,6 +201,45 @@ export default function CourseSelector({ onStartQuiz }) {
       <div className="fade-in" style={{ maxWidth: 560 }}>
         <Breadcrumb items={crumbs} />
         <h2 style={{ fontSize: "1.3rem", fontWeight: 700, margin: "1rem 0 1.5rem" }}>Set up your quiz</h2>
+
+        {(() => {
+          const mats = subjectMaterials(sel.course.id);
+          const SOURCES = [
+            { id: "ai", label: "AI (general AP)", desc: "Standard AP-style questions" },
+            { id: "materials", label: "My materials only", desc: "Only from your uploaded notes — best for school tests" },
+            { id: "blend", label: "Blend both", desc: "Mix of AP questions and your notes" },
+          ];
+          return (
+            <div className="card" style={{ marginBottom: "1rem" }}>
+              <div style={{ fontWeight: 600, marginBottom: "0.25rem" }}>Question source</div>
+              {mats.length === 0 ? (
+                <div style={{ fontSize: "0.82rem", color: "var(--muted)" }}>
+                  Using AI questions. Upload notes in <strong>My Materials</strong> to generate questions from your own documents.
+                </div>
+              ) : (
+                <>
+                  <div style={{ fontSize: "0.8rem", color: "var(--muted)", marginBottom: "0.75rem" }}>
+                    {mats.length} document{mats.length > 1 ? "s" : ""} available for {sel.course.name}
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                    {SOURCES.map((s) => (
+                      <button key={s.id} onClick={() => set("source", s.id)}
+                        style={{
+                          textAlign: "left", padding: "0.65rem 0.9rem", borderRadius: 10,
+                          border: `2px solid ${sel.source === s.id ? sel.course.color : "var(--border)"}`,
+                          background: sel.source === s.id ? "rgba(99,102,241,0.12)" : "var(--bg3)",
+                          color: "var(--text)", cursor: "pointer", transition: "all 0.2s",
+                        }}>
+                        <div style={{ fontWeight: 600, fontSize: "0.9rem" }}>{s.label}</div>
+                        <div style={{ fontSize: "0.78rem", color: "var(--muted)" }}>{s.desc}</div>
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          );
+        })()}
 
         <div className="card" style={{ marginBottom: "1rem" }}>
           <div style={{ fontWeight: 600, marginBottom: "0.75rem" }}>Difficulty</div>

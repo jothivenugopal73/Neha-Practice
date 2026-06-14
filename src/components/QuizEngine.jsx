@@ -29,6 +29,8 @@ export default function QuizEngine({ config, onComplete, onBack }) {
           topic: config.aiTopic || config.topicName,
           difficulty: config.difficulty,
           count: config.count,
+          source: config.source,
+          sourceText: config.sourceText,
         }),
       });
       const data = await res.json();

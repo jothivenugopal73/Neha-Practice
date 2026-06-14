@@ -56,13 +56,33 @@ async function callGemini(apiKey, prompt, generationConfig) {
   return text;
 }
 
-function questionPrompt({ subject, unit, topic, difficulty, count }) {
+function questionPrompt({ subject, unit, topic, difficulty, count, source, sourceText }) {
+  let grounding = "";
+  if (source === "materials" && sourceText) {
+    grounding = `
+IMPORTANT - SOURCE RESTRICTION: Base every question STRICTLY and ONLY on the student's own study material below. Do NOT use outside knowledge or facts not present in this material. If the material focuses on certain points, your questions must come from those points. This is for a school test on exactly this content.
+
+===== STUDENT'S STUDY MATERIAL =====
+${sourceText}
+===== END OF MATERIAL =====
+`;
+  } else if (source === "blend" && sourceText) {
+    grounding = `
+Use a mix: some questions grounded in the student's study material below, and some standard AP-style questions on the same topic.
+
+===== STUDENT'S STUDY MATERIAL =====
+${sourceText}
+===== END OF MATERIAL =====
+`;
+  }
+
   return `You are an expert AP teacher. Generate exactly ${count} ${difficulty} level multiple choice practice questions for:
 Subject: ${subject}
 Unit: ${unit}
 Topic(s): ${topic}
 
 If multiple topics are listed above, distribute the questions roughly evenly across them.
+${grounding}
 
 MATH FORMATTING: For any mathematical expressions, use LaTeX wrapped in single dollar signs, e.g. $\\frac{x^3}{y}$ or $\\log_b(x)$. Do this in the question text, all four options, and the explanations.
 
@@ -102,7 +122,7 @@ export default async (request) => {
 
   try {
     const body = await request.json();
-    const { mode, subject, unit, topic, difficulty, count, question, history } = body;
+    const { mode, subject, unit, topic, difficulty, count, question, history, source, sourceText } = body;
 
     // ---- QUESTION GENERATION: parallel batches of 5 to stay under the timeout ----
     if (mode === "generate_questions") {
@@ -118,7 +138,7 @@ export default async (request) => {
 
       // Generate one batch; retry once if the JSON is somehow incomplete.
       const genBatch = async (c) => {
-        const p = questionPrompt({ subject, unit, topic, difficulty, count: c });
+        const p = questionPrompt({ subject, unit, topic, difficulty, count: c, source, sourceText });
         try {
           return JSON.parse(await callGemini(apiKey, p, genConfig));
         } catch {
