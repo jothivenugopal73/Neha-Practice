@@ -1,307 +1,32 @@
 {
-  "runAt": "2026-06-14T00:11:16.864Z",
+  "runAt": "2026-06-14T01:08:31.040Z",
   "genModel": "gemini-2.5-flash",
   "verifyModel": "gemini-2.5-pro",
   "summary": {
-    "totalQuestions": 23,
-    "structurallyValid": 10,
-    "answerAgreement": "10/23 (43%)",
-    "structuralFailures": 13,
+    "totalQuestions": 25,
+    "structurallyValid": 25,
+    "answerAgreement": "25/25 (100%)",
+    "structuralFailures": 0,
     "answerMismatches": 0,
     "lowConfidenceAgreements": 0
   },
-  "flagged": [
-    {
-      "subject": "AP Precalculus",
-      "topic": "Unit Circle",
-      "difficulty": "AP Exam Level",
-      "question": "What is the exact value of $\\cos\\left(\\frac{7\\pi}{6}\\right)$?",
-      "options": [
-        "A) $\\frac{1}{2}$",
-        "B) $-\\frac{1}{2}$",
-        "C) $\\frac{\\sqrt{3}}{2}$",
-        "D) $-\\frac{\\sqrt{3}}{2}$"
-      ],
-      "claimedAnswer": "D",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Precalculus",
-      "topic": "Unit Circle",
-      "difficulty": "AP Exam Level",
-      "question": "If the terminal side of an angle $\\theta$ in standard position passes through the point $\\left(-\\frac{3}{5}, \\frac{4}{5}\\right)$ on the unit circle, what is the value of $\\tan(\\theta)$?",
-      "options": [
-        "A) $-\\frac{3}{4}$",
-        "B) $\\frac{4}{3}$",
-        "C) $-\\frac{4}{3}$",
-        "D) $\\frac{3}{4}$"
-      ],
-      "claimedAnswer": "C",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Precalculus",
-      "topic": "Unit Circle",
-      "difficulty": "AP Exam Level",
-      "question": "If $\\sin(\\theta) = -\\frac{1}{2}$ and $\\cos(\\theta) > 0$, what is the value of $\\theta$ in the interval $[0, 2\\pi)$?",
-      "options": [
-        "A) $\\frac{7\\pi}{6}$",
-        "B) $\\frac{11\\pi}{6}$",
-        "C) $\\frac{4\\pi}{3}$",
-        "D) $\\frac{5\\pi}{3}$"
-      ],
-      "claimedAnswer": "B",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Precalculus",
-      "topic": "Unit Circle",
-      "difficulty": "AP Exam Level",
-      "question": "A Ferris wheel has a radius of 20 meters and its center is 22 meters above the ground. A rider starts at the lowest point of the wheel. Which of the following equations models the rider's height $h$ (in meters) above the ground as a function of the angle $\\theta$ (in radians) rotated from the lowest point?",
-      "options": [
-        "A) $h(\\theta) = 20\\sin(\\theta) + 22$",
-        "B) $h(\\theta) = -20\\cos(\\theta) + 22$",
-        "C) $h(\\theta) = -20\\cos(\\theta) + 42$",
-        "D) $h(\\theta) = 20\\sin(\\theta) + 42$"
-      ],
-      "claimedAnswer": "C",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A",
-        "missing wrongAnswerHelp for B"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Biology",
-      "topic": "Punnett Squares",
-      "difficulty": "Intermediate",
-      "question": "In a certain species of fish, blue scales (B) are dominant over red scales (b). If a homozygous dominant blue-scaled fish is crossed with a red-scaled fish, what percentage of the F1 generation will have blue scales?",
-      "options": [
-        "A) 0%",
-        "B) 25%",
-        "C) 50%",
-        "D) 100%"
-      ],
-      "claimedAnswer": "D",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Biology",
-      "topic": "Punnett Squares",
-      "difficulty": "Intermediate",
-      "question": "A cross is performed between two individuals, both heterozygous for a single gene (Aa x Aa). What is the probability that an offspring will have the same genotype as the parents?",
-      "options": [
-        "A) $\frac{1}{4}$",
-        "B) $\frac{1}{2}$",
-        "C) $\frac{3}{4}$",
-        "D) $1$"
-      ],
-      "claimedAnswer": "B",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Biology",
-      "topic": "Punnett Squares",
-      "difficulty": "Intermediate",
-      "question": "In humans, the allele for brown eyes (B) is dominant over the allele for blue eyes (b). A brown-eyed man whose mother had blue eyes marries a blue-eyed woman. What is the probability that their first child will have blue eyes?",
-      "options": [
-        "A) 0%",
-        "B) 25%",
-        "C) 50%",
-        "D) 75%"
-      ],
-      "claimedAnswer": "C",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Biology",
-      "topic": "Punnett Squares",
-      "difficulty": "Intermediate",
-      "question": "Two genes, A/a and B/b, are located on different chromosomes. A genetic cross is performed between an individual with genotype AaBb and an individual with genotype Aabb. What proportion of the offspring are expected to have the genotype A_bb (where A_ represents either AA or Aa)?",
-      "options": [
-        "A) $\frac{1}{8}$",
-        "B) $\frac{3}{8}$",
-        "C) $\frac{1}{4}$",
-        "D) $\frac{3}{16}$"
-      ],
-      "claimedAnswer": "B",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Physics 1",
-      "topic": "Projectile Motion",
-      "difficulty": "Advanced",
-      "question": "A stone is thrown horizontally from the top of a cliff of height $H$ with an initial speed $v_0$. Air resistance is negligible. Which of the following statements is true regarding the stone's motion?",
-      "options": [
-        "A) The time it takes to hit the ground depends on $v_0$.",
-        "B) The horizontal distance traveled depends only on $v_0$.",
-        "C) The vertical acceleration is constant and equal to $g$.",
-        "D) The speed of the stone is constant throughout its flight."
-      ],
-      "claimedAnswer": "C",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Physics 1",
-      "topic": "Projectile Motion",
-      "difficulty": "Advanced",
-      "question": "A ball is launched at an angle of $45^\\circ$ above the horizontal with an initial speed $v_0$. Ignoring air resistance, at what other angle of launch, with the same initial speed $v_0$, would the ball achieve the same horizontal range?",
-      "options": [
-        "A) $30^\\circ$",
-        "B) $60^\\circ$",
-        "C) $75^\\circ$",
-        "D) $90^\\circ$"
-      ],
-      "claimedAnswer": "C",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Physics 1",
-      "topic": "Projectile Motion",
-      "difficulty": "Advanced",
-      "question": "A projectile is launched with an initial velocity vector $\\vec{v}_0 = (30 \\hat{i} + 40 \\hat{j})$ m/s from the ground. Assuming $g = 10$ m/s$^2$ and neglecting air resistance, what is the maximum height achieved by the projectile?",
-      "options": [
-        "A) $40$ m",
-        "B) $80$ m",
-        "C) $120$ m",
-        "D) $160$ m"
-      ],
-      "claimedAnswer": "B",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP US History",
-      "topic": "American Revolution",
-      "difficulty": "Intermediate",
-      "question": "The Sons of Liberty were a significant force in the American Revolution primarily because they:",
-      "options": [
-        "A) Successfully negotiated with British officials to repeal unfair taxes.",
-        "B) Organized boycotts and used intimidation to protest British policies.",
-        "C) Served as the primary military force against British troops in early skirmishes.",
-        "D) Drafted the Declaration of Independence and other key revolutionary documents."
-      ],
-      "claimedAnswer": "B",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP US History",
-      "topic": "American Revolution",
-      "difficulty": "Intermediate",
-      "question": "Which of the following best describes the primary argument of Thomas Paine's 'Common Sense'?",
-      "options": [
-        "A) It advocated for reconciliation with Great Britain under certain conditions.",
-        "B) It argued for the inherent superiority of monarchy as a form of government.",
-        "C) It called for immediate independence from British rule and the establishment of a republican government.",
-        "D) It primarily focused on the economic benefits of remaining within the British Empire."
-      ],
-      "claimedAnswer": "C",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    }
-  ],
+  "flagged": [],
   "all": [
     {
       "subject": "AP Precalculus",
       "topic": "Properties of Logarithms",
       "difficulty": "Advanced",
-      "question": "Which of the following expressions is equivalent to $\\log_b\\left(\\frac{x^3\\sqrt{y}}{z^4}\\right)$?",
+      "question": "Which of the following is equivalent to $\\log_b(x^3y^2)$?",
       "options": [
-        "A) $3\\log_b x + \\frac{1}{2}\\log_b y - 4\\log_b z$",
-        "B) $\\frac{3}{2}\\log_b(xy) - 4\\log_b z$",
-        "C) $3\\log_b x + 2\\log_b y - 4\\log_b z$",
-        "D) $\\log_b(3x) + \\log_b\\left(\\frac{1}{2}y\\right) - \\log_b(4z)$"
+        "A) $3\\log_b(x) + 2\\log_b(y)$",
+        "B) $6\\log_b(xy)$",
+        "C) $(3\\log_b(x))(2\\log_b(y))$",
+        "D) $\\log_b(x) + \\log_b(y) + 5$"
       ],
       "claimedAnswer": "A",
       "verifiedAnswer": "A",
-      "verifierConfidence": "high",
-      "verifierReasoning": "The expression is expanded by applying the quotient, product, and power rules for logarithms in sequence.",
+      "verifierConfidence": "High",
+      "verifierReasoning": "The problem asks to find an expression equivalent to $\\log_b(x^3y^2)$. To solve this, we use the properties of logarithms.\n\n1.  **Product Rule of Logarithms**: This rule states that the logarithm of a product is the sum of the logarithms of the factors. Mathematically, $\\log_b(MN) = \\log_b(M) + \\log_b(N)$.\n    Applying this rule to the given expression, we can separate the terms $x^3$ and $y^2$:\n    $\\log_b(x^3y^2) = \\log_b(x^3) + \\log_b(y^2)$\n\n2.  **Power Rule of Logarithms**: This rule states that the logarithm of a number raised to an exponent is the product of the exponent and the logarithm of the number. Mathematically, $\\log_b(M^p) = p\\log_b(M)$.\n    We apply this rule to both terms from the previous step:\n    For the first term, $\\log_b(x^3)$, the exponent is 3. So, $\\log_b(x^3) = 3\\log_b(x)$.\n    For the second term, $\\log_b(y^2)$, the exponent is 2. So, $\\log_b(y^2) = 2\\log_b(y)$.\n\n3.  **Combine the results**: Substitute the results from the power rule back into the expression from the product rule:\n    $\\log_b(x^3y^2) = 3\\log_b(x) + 2\\log_b(y)$\n\nThis resulting expression matches option A.\n\nLet's analyze the other options to confirm they are incorrect:\nB) $6\\log_b(xy) = \\log_b((xy)^6) = \\log_b(x^6y^6)$, which is not equivalent.\nC) $(3\\log_b(x))(2\\log_b(y))$ represents a product of logarithms, not a sum. This is a common mistake confusing logarithm rules.\nD) $\\log_b(x) + \\log_b(y) + 5 = \\log_b(xy) + 5$, which is not equivalent.\n\nTherefore, the only equivalent expression is $3\\log_b(x) + 2\\log_b(y)$.",
       "structuralIssues": [],
       "answerMismatch": false,
       "flagged": false
@@ -310,17 +35,17 @@
       "subject": "AP Precalculus",
       "topic": "Properties of Logarithms",
       "difficulty": "Advanced",
-      "question": "Given $\\log_5 2 = A$ and $\\log_5 3 = B$, express $\\log_5 72$ in terms of $A$ and $B$.",
+      "question": "If $\\log_5(A) = 2$ and $\\log_5(B) = 3$, what is the value of $\\log_5\\left(\\frac{A^2}{B}\\right)$?",
       "options": [
-        "A) $3A + 2B$",
-        "B) $A^3 B^2$",
-        "C) $2A + 3B$",
-        "D) $A + B + 70$"
+        "A) $1$",
+        "B) $-1$",
+        "C) $7$",
+        "D) $4$"
       ],
       "claimedAnswer": "A",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
+      "verifiedAnswer": "A",
+      "verifierConfidence": "High",
+      "verifierReasoning": "The problem requires evaluating the expression $\\log_5\\left(\\frac{A^2}{B}\\right)$ given the values of $\\log_5(A)$ and $\\log_5(B)$. We can use the properties of logarithms to simplify the expression. The logarithm of a quotient, $\\log_b(x/y)$, is equal to $\\log_b(x) - \\log_b(y)$. The logarithm of a power, $\\log_b(x^n)$, is equal to $n \\cdot \\log_b(x)$.\n\nApplying these properties:\n1.  Use the quotient rule: $\\log_5\\left(\\frac{A^2}{B}\\right) = \\log_5(A^2) - \\log_5(B)$.\n2.  Use the power rule on the first term: $\\log_5(A^2) = 2 \\cdot \\log_5(A)$.\n3.  Substitute this back into the expression: $2 \\cdot \\log_5(A) - \\log_5(B)$.\n\nNow, substitute the given values, $\\log_5(A) = 2$ and $\\log_5(B) = 3$:\n$2 \\cdot (2) - 3$\n$4 - 3 = 1$\n\nThus, the value of the expression is 1. This corresponds to option A.",
       "structuralIssues": [],
       "answerMismatch": false,
       "flagged": false
@@ -329,276 +54,31 @@
       "subject": "AP Precalculus",
       "topic": "Properties of Logarithms",
       "difficulty": "Advanced",
-      "question": "Simplify the expression: $\\log_2 16^{x+1} - \\log_2 4^{x-1}$",
+      "question": "Which of the following expressions is NOT equivalent to $\\log_c(x)$?",
       "options": [
-        "A) $2x+6$",
-        "B) $x+5$",
-        "C) $2x-2$",
-        "D) $4x+2$"
-      ],
-      "claimedAnswer": "A",
-      "verifiedAnswer": "A",
-      "verifierConfidence": "high",
-      "verifierReasoning": "The expression simplifies to $(x+1)\\log_2 16 - (x-1)\\log_2 4$, which becomes $4(x+1) - 2(x-1)$, and further simplifies to $4x+4 - 2x+2 = 2x+6$.",
-      "structuralIssues": [],
-      "answerMismatch": false,
-      "flagged": false
-    },
-    {
-      "subject": "AP Precalculus",
-      "topic": "Properties of Logarithms",
-      "difficulty": "Advanced",
-      "question": "If $\\log_3 x = 2.5$ and $\\log_3 y = 1.5$, what is the value of $\\log_3 \\left(\\frac{x^2}{y}\\right)$?",
-      "options": [
-        "A) 3.5",
-        "B) 7.5",
-        "C) 1.5",
-        "D) 5.0"
-      ],
-      "claimedAnswer": "A",
-      "verifiedAnswer": "A",
-      "verifierConfidence": "high",
-      "verifierReasoning": "Using the properties of logarithms, the expression simplifies to $2 \\log_3 x - \\log_3 y$, which evaluates to $2(2.5) - 1.5 = 5 - 1.5 = 3.5$.",
-      "structuralIssues": [],
-      "answerMismatch": false,
-      "flagged": false
-    },
-    {
-      "subject": "AP Precalculus",
-      "topic": "Properties of Logarithms",
-      "difficulty": "Advanced",
-      "question": "Which of the following is equivalent to $\\frac{1}{3}\\log(x) - 2\\log(y) + \\log(z)$?",
-      "options": [
-        "A) $\\log\\left(\\frac{z\\sqrt[3]{x}}{y^2}\\right)$",
-        "B) $\\log\\left(\\frac{xz^{1/3}}{y^2}\\right)$",
-        "C) $\\log\\left(\\frac{z x^3}{y^2}\\right)$",
-        "D) $\\log\\left(\\frac{\\sqrt[3]{x}}{2yz}\\right)$"
-      ],
-      "claimedAnswer": "A",
-      "verifiedAnswer": "A",
-      "verifierConfidence": "high",
-      "verifierReasoning": "Using logarithm properties, the expression becomes log(x^(1/3)) - log(y^2) + log(z), which combines to log((z * x^(1/3)) / y^2), equivalent to log((z * cube_root(x)) / y^2).",
-      "structuralIssues": [],
-      "answerMismatch": false,
-      "flagged": false
-    },
-    {
-      "subject": "AP Precalculus",
-      "topic": "Unit Circle",
-      "difficulty": "AP Exam Level",
-      "question": "What is the exact value of $\\cos\\left(\\frac{7\\pi}{6}\\right)$?",
-      "options": [
-        "A) $\\frac{1}{2}$",
-        "B) $-\\frac{1}{2}$",
-        "C) $\\frac{\\sqrt{3}}{2}$",
-        "D) $-\\frac{\\sqrt{3}}{2}$"
+        "A) $\\frac{\\log_b(x)}{\\log_b(c)}$",
+        "B) $\\log_c(1) + \\log_c(x)$",
+        "C) $\\log_c(x^2) - \\log_c(x)$",
+        "D) $(\\log_c(x))^2$"
       ],
       "claimedAnswer": "D",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Precalculus",
-      "topic": "Unit Circle",
-      "difficulty": "AP Exam Level",
-      "question": "If the terminal side of an angle $\\theta$ in standard position passes through the point $\\left(-\\frac{3}{5}, \\frac{4}{5}\\right)$ on the unit circle, what is the value of $\\tan(\\theta)$?",
-      "options": [
-        "A) $-\\frac{3}{4}$",
-        "B) $\\frac{4}{3}$",
-        "C) $-\\frac{4}{3}$",
-        "D) $\\frac{3}{4}$"
-      ],
-      "claimedAnswer": "C",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Precalculus",
-      "topic": "Unit Circle",
-      "difficulty": "AP Exam Level",
-      "question": "Which of the following angles is coterminal with $\\frac{5\\pi}{4}$?",
-      "options": [
-        "A) $-\\frac{3\\pi}{4}$",
-        "B) $\\frac{\\pi}{4}$",
-        "C) $\\frac{9\\pi}{4}$",
-        "D) $-\\frac{5\\pi}{4}$"
-      ],
-      "claimedAnswer": "A",
-      "verifiedAnswer": "A",
-      "verifierConfidence": "high",
-      "verifierReasoning": "Coterminal angles differ by integer multiples of 2π, and subtracting 2π from the given angle yields the angle in option A:  (5π/4) - 2π = (5π/4) - (8π/4) = -3π/4.",
+      "verifiedAnswer": "D",
+      "verifierConfidence": "High",
+      "verifierReasoning": "Let's analyze each option to see if it is equivalent to $\\log_c(x)$.\n\nA) $\\frac{\\log_b(x)}{\\log_b(c)}$: This is the change of base formula for logarithms. It is a well-known identity that $\\log_c(x) = \\frac{\\log_b(x)}{\\log_b(c)}$. So, this expression is equivalent.\n\nB) $\\log_c(1) + \\log_c(x)$: We know that for any valid base $c$, $\\log_c(1) = 0$. Therefore, the expression simplifies to $0 + \\log_c(x) = \\log_c(x)$. So, this expression is equivalent.\n\nC) $\\log_c(x^2) - \\log_c(x)$: Using the quotient rule for logarithms, which states that $\\log_c(a) - \\log_c(b) = \\log_c(\\frac{a}{b})$, this expression becomes $\\log_c(\\frac{x^2}{x})$. Assuming $x>0$, this simplifies to $\\log_c(x)$. Alternatively, using the power rule $\\log_c(a^n) = n\\log_c(a)$, the expression becomes $2\\log_c(x) - \\log_c(x) = \\log_c(x)$. So, this expression is equivalent.\n\nD) $(\\log_c(x))^2$: This expression represents the square of the value of $\\log_c(x)$. This is not a logarithmic identity and is generally not equal to $\\log_c(x)$. For example, if $c=10$ and $x=100$, then $\\log_{10}(100) = 2$. However, $(\\log_{10}(100))^2 = 2^2 = 4$. Since $2 \\neq 4$, this expression is not equivalent to $\\log_c(x)$.\n\nTherefore, the only expression that is not equivalent to $\\log_c(x)$ is $(\\log_c(x))^2$.",
       "structuralIssues": [],
       "answerMismatch": false,
       "flagged": false
     },
     {
       "subject": "AP Precalculus",
-      "topic": "Unit Circle",
-      "difficulty": "AP Exam Level",
-      "question": "If $\\sin(\\theta) = -\\frac{1}{2}$ and $\\cos(\\theta) > 0$, what is the value of $\\theta$ in the interval $[0, 2\\pi)$?",
-      "options": [
-        "A) $\\frac{7\\pi}{6}$",
-        "B) $\\frac{11\\pi}{6}$",
-        "C) $\\frac{4\\pi}{3}$",
-        "D) $\\frac{5\\pi}{3}$"
-      ],
-      "claimedAnswer": "B",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Precalculus",
-      "topic": "Unit Circle",
-      "difficulty": "AP Exam Level",
-      "question": "A Ferris wheel has a radius of 20 meters and its center is 22 meters above the ground. A rider starts at the lowest point of the wheel. Which of the following equations models the rider's height $h$ (in meters) above the ground as a function of the angle $\\theta$ (in radians) rotated from the lowest point?",
-      "options": [
-        "A) $h(\\theta) = 20\\sin(\\theta) + 22$",
-        "B) $h(\\theta) = -20\\cos(\\theta) + 22$",
-        "C) $h(\\theta) = -20\\cos(\\theta) + 42$",
-        "D) $h(\\theta) = 20\\sin(\\theta) + 42$"
-      ],
-      "claimedAnswer": "C",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A",
-        "missing wrongAnswerHelp for B"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Biology",
-      "topic": "Punnett Squares",
-      "difficulty": "Intermediate",
-      "question": "In pea plants, tallness (T) is dominant over dwarfness (t), and purple flowers (P) are dominant over white flowers (p). If a dihybrid cross is performed between two pea plants heterozygous for both traits (TtPp x TtPp), what is the expected phenotypic ratio of tall, purple plants to tall, white plants to dwarf, purple plants to dwarf, white plants?",
-      "options": [
-        "A) 9:3:3:1",
-        "B) 1:1:1:1",
-        "C) 3:1:3:1",
-        "D) 9:3:1:1"
-      ],
-      "claimedAnswer": "A",
-      "verifiedAnswer": "A",
-      "verifierConfidence": "high",
-      "verifierReasoning": "A dihybrid cross between two parents heterozygous for both traits (TtPp x TtPp) classically yields a 9:3:3:1 phenotypic ratio due to Mendelian independent assortment.",
-      "structuralIssues": [],
-      "answerMismatch": false,
-      "flagged": false
-    },
-    {
-      "subject": "AP Biology",
-      "topic": "Punnett Squares",
-      "difficulty": "Intermediate",
-      "question": "In a certain species of fish, blue scales (B) are dominant over red scales (b). If a homozygous dominant blue-scaled fish is crossed with a red-scaled fish, what percentage of the F1 generation will have blue scales?",
-      "options": [
-        "A) 0%",
-        "B) 25%",
-        "C) 50%",
-        "D) 100%"
-      ],
-      "claimedAnswer": "D",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Biology",
-      "topic": "Punnett Squares",
-      "difficulty": "Intermediate",
-      "question": "A cross is performed between two individuals, both heterozygous for a single gene (Aa x Aa). What is the probability that an offspring will have the same genotype as the parents?",
-      "options": [
-        "A) $\frac{1}{4}$",
-        "B) $\frac{1}{2}$",
-        "C) $\frac{3}{4}$",
-        "D) $1$"
-      ],
-      "claimedAnswer": "B",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Biology",
-      "topic": "Punnett Squares",
-      "difficulty": "Intermediate",
-      "question": "In humans, the allele for brown eyes (B) is dominant over the allele for blue eyes (b). A brown-eyed man whose mother had blue eyes marries a blue-eyed woman. What is the probability that their first child will have blue eyes?",
-      "options": [
-        "A) 0%",
-        "B) 25%",
-        "C) 50%",
-        "D) 75%"
-      ],
-      "claimedAnswer": "C",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Biology",
-      "topic": "Punnett Squares",
-      "difficulty": "Intermediate",
-      "question": "Two genes, A/a and B/b, are located on different chromosomes. A genetic cross is performed between an individual with genotype AaBb and an individual with genotype Aabb. What proportion of the offspring are expected to have the genotype A_bb (where A_ represents either AA or Aa)?",
-      "options": [
-        "A) $\frac{1}{8}$",
-        "B) $\frac{3}{8}$",
-        "C) $\frac{1}{4}$",
-        "D) $\frac{3}{16}$"
-      ],
-      "claimedAnswer": "B",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Physics 1",
-      "topic": "Projectile Motion",
+      "topic": "Properties of Logarithms",
       "difficulty": "Advanced",
-      "question": "A projectile is launched from the ground with an initial velocity $v_0$ at an angle $\\theta$ above the horizontal. At the highest point of its trajectory, the magnitude of its velocity is $v_0 \\cos\\theta$. What is the ratio of its kinetic energy at the highest point to its initial kinetic energy?",
+      "question": "Given $\\log_a(P) = 5$ and $\\log_a(Q) = -2$, what is $\\log_a\\left(\\frac{a^3 \\cdot P^2}{\\sqrt{Q}}\\right)$?",
       "options": [
-        "A) $\\cos^2\\theta$",
-        "B) $\\cos\\theta$",
-        "C) $1 - \\sin^2\\theta$",
-        "D) $\\frac{1}{2}\\cos^2\\theta$"
+        "A) $16$",
+        "B) $13$",
+        "C) $10$",
+        "D) $18$"
       ],
       "claimedAnswer": "A",
       "verifiedAnswer": null,
@@ -609,83 +89,305 @@
       "flagged": false
     },
     {
-      "subject": "AP Physics 1",
-      "topic": "Projectile Motion",
+      "subject": "AP Precalculus",
+      "topic": "Properties of Logarithms",
       "difficulty": "Advanced",
-      "question": "A stone is thrown horizontally from the top of a cliff of height $H$ with an initial speed $v_0$. Air resistance is negligible. Which of the following statements is true regarding the stone's motion?",
+      "question": "If $\\ln(x) = A$, $\\ln(y) = B$, and $\\ln(z) = C$, express $\\ln\\left(\\frac{x^4 \\sqrt[3]{y}}{e^2 z^5}\\right)$ in terms of A, B, and C.",
       "options": [
-        "A) The time it takes to hit the ground depends on $v_0$.",
-        "B) The horizontal distance traveled depends only on $v_0$.",
-        "C) The vertical acceleration is constant and equal to $g$.",
-        "D) The speed of the stone is constant throughout its flight."
-      ],
-      "claimedAnswer": "C",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Physics 1",
-      "topic": "Projectile Motion",
-      "difficulty": "Advanced",
-      "question": "A ball is launched at an angle of $45^\\circ$ above the horizontal with an initial speed $v_0$. Ignoring air resistance, at what other angle of launch, with the same initial speed $v_0$, would the ball achieve the same horizontal range?",
-      "options": [
-        "A) $30^\\circ$",
-        "B) $60^\\circ$",
-        "C) $75^\\circ$",
-        "D) $90^\\circ$"
-      ],
-      "claimedAnswer": "C",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Physics 1",
-      "topic": "Projectile Motion",
-      "difficulty": "Advanced",
-      "question": "A projectile is launched with an initial velocity vector $\\vec{v}_0 = (30 \\hat{i} + 40 \\hat{j})$ m/s from the ground. Assuming $g = 10$ m/s$^2$ and neglecting air resistance, what is the maximum height achieved by the projectile?",
-      "options": [
-        "A) $40$ m",
-        "B) $80$ m",
-        "C) $120$ m",
-        "D) $160$ m"
-      ],
-      "claimedAnswer": "B",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
-      "answerMismatch": false,
-      "flagged": true
-    },
-    {
-      "subject": "AP Physics 1",
-      "topic": "Projectile Motion",
-      "difficulty": "Advanced",
-      "question": "A cannonball is fired from a cliff of height $h$ with an initial speed $v_0$ at an angle $\\theta$ above the horizontal. Which of the following expressions correctly represents the time it takes for the cannonball to reach its maximum height?",
-      "options": [
-        "A) $t = \\frac{v_0 \\sin\\theta}{g}$",
-        "B) $t = \\frac{v_0 \\cos\\theta}{g}$",
-        "C) $t = \\frac{2v_0 \\sin\\theta}{g}$",
-        "D) $t = \\frac{v_0^2 \\sin(2\\theta)}{g}$"
+        "A) $4A + \\frac{1}{3}B - 2 - 5C$",
+        "B) $4A + 3B - 2 - 5C$",
+        "C) $4A + \\frac{1}{3}B - 2e - 5C$",
+        "D) $4A + \\frac{1}{3}B - 5C$"
       ],
       "claimedAnswer": "A",
       "verifiedAnswer": "A",
-      "verifierConfidence": "high",
-      "verifierReasoning": "The time to reach maximum height is determined by the vertical motion, where the final vertical velocity is zero; using the kinematic equation $v_y = v_{0y} + a_y t$, we get $0 = v_0 \\sin\\theta - gt$, which solves to $t = \\frac{v_0 \\sin\\theta}{g}$.",
+      "verifierConfidence": "High",
+      "verifierReasoning": "The problem requires simplifying the expression $\\ln\\left(\\frac{x^4 \\sqrt[3]{y}}{e^2 z^5}\\right)$ using the properties of logarithms and the given substitutions. The steps are as follows:\n1.  Apply the quotient rule for logarithms, $\\ln(M/N) = \\ln(M) - \\ln(N)$:\n    $\\ln(x^4 \\sqrt[3]{y}) - \\ln(e^2 z^5)$\n2.  Apply the product rule for logarithms, $\\ln(MN) = \\ln(M) + \\ln(N)$, to both terms:\n    $(\\ln(x^4) + \\ln(\\sqrt[3]{y})) - (\\ln(e^2) + \\ln(z^5))$\n3.  Distribute the negative sign:\n    $\\ln(x^4) + \\ln(\\sqrt[3]{y}) - \\ln(e^2) - \\ln(z^5)$\n4.  Rewrite the cube root as a fractional exponent, $\\sqrt[3]{y} = y^{1/3}$:\n    $\\ln(x^4) + \\ln(y^{1/3}) - \\ln(e^2) - \\ln(z^5)$\n5.  Apply the power rule for logarithms, $\\ln(M^p) = p \\ln(M)$:\n    $4\\ln(x) + \\frac{1}{3}\\ln(y) - 2\\ln(e) - 5\\ln(z)$\n6.  Substitute the given values: $\\ln(x) = A$, $\\ln(y) = B$, $\\ln(z) = C$. Also, use the fundamental property that $\\ln(e) = 1$.\n    $4(A) + \\frac{1}{3}(B) - 2(1) - 5(C)$\n7.  Simplify the final expression:\n    $4A + \\frac{1}{3}B - 2 - 5C$\nThis matches option A.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "What are the coordinates $(x, y)$ of the point on the unit circle corresponding to an angle of $\frac{7\\pi}{6}$ radians?",
+      "options": [
+        "A) $(\\frac{\\sqrt{3}}{2}, -\\frac{1}{2})$",
+        "B) $(-\\frac{\\sqrt{3}}{2}, -\\frac{1}{2})$",
+        "C) $(-\\frac{1}{2}, -\\frac{\\sqrt{3}}{2})$",
+        "D) $(\\frac{1}{2}, -\\frac{\\sqrt{3}}{2})$"
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": "B",
+      "verifierConfidence": "High",
+      "verifierReasoning": "The coordinates of a point on the unit circle corresponding to an angle $\\theta$ are given by $(x, y) = (\\cos(\\theta), \\sin(\\theta))$. The given angle is $\\theta = \\frac{7\\pi}{6}$. This angle lies in the third quadrant, since $\\pi < \\frac{7\\pi}{6} < \\frac{3\\pi}{2}$. In the third quadrant, both the x-coordinate (cosine) and the y-coordinate (sine) are negative. The reference angle is $\\frac{7\\pi}{6} - \\pi = \\frac{\\pi}{6}$. We know that $\\cos(\\frac{\\pi}{6}) = \\frac{\\sqrt{3}}{2}$ and $\\sin(\\frac{\\pi}{6}) = \\frac{1}{2}$. Since the angle is in the third quadrant, we take the negative of both values. Therefore, $x = \\cos(\\frac{7\\pi}{6}) = -\\cos(\\frac{\\pi}{6}) = -\\frac{\\sqrt{3}}{2}$ and $y = \\sin(\\frac{7\\pi}{6}) = -\\sin(\\frac{\\pi}{6}) = -\\frac{1}{2}$. The coordinates are $(-\\frac{\\sqrt{3}}{2}, -\\frac{1}{2})$, which corresponds to option B.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "If $\\sin(\\theta) = -\\frac{3}{5}$ and $\\theta$ is in the third quadrant, what is the value of $\\cos(\\theta)$?",
+      "options": [
+        "A) $\\frac{4}{5}$",
+        "B) $-\\frac{4}{5}$",
+        "C) $\\frac{3}{5}$",
+        "D) $-\\frac{3}{5}$"
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": "B",
+      "verifierConfidence": "High",
+      "verifierReasoning": "The problem provides that sin(θ) = -3/5 and θ is in the third quadrant. We can use the Pythagorean identity, sin²(θ) + cos²(θ) = 1, to find the value of cos(θ). Substituting the given value of sin(θ): (-3/5)² + cos²(θ) = 1. This simplifies to 9/25 + cos²(θ) = 1. Subtracting 9/25 from both sides gives cos²(θ) = 1 - 9/25 = 16/25. Taking the square root of both sides, we get cos(θ) = ±√(16/25) = ±4/5. Since θ is in the third quadrant, both the sine and cosine values must be negative. Therefore, we must choose the negative value for cos(θ). So, cos(θ) = -4/5.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "Which of the following angles is coterminal with an angle of $-\\frac{5\\pi}{4}$ radians?",
+      "options": [
+        "A) $\\frac{3\\pi}{4}$",
+        "B) $\\frac{5\\pi}{4}$",
+        "C) $-\\frac{\\pi}{4}$",
+        "D) $\\frac{7\\pi}{4}$"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": "A",
+      "verifierConfidence": "High",
+      "verifierReasoning": "Coterminal angles are angles in standard position that have the same terminal side. To find an angle that is coterminal with a given angle, you add or subtract an integer multiple of a full rotation. In radians, a full rotation is 2π. The given angle is -5π/4. To find a positive coterminal angle, we can add 2π to the given angle. Calculation: -5π/4 + 2π = -5π/4 + 8π/4 = (8π - 5π)/4 = 3π/4. This matches option A.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "If the terminal side of an angle $\\theta$ in standard position passes through the point $(-5, 12)$, what is the value of $\\tan(\\theta)$?",
+      "options": [
+        "A) $-\\frac{12}{5}$",
+        "B) $\\frac{12}{5}$",
+        "C) $-\\frac{5}{12}$",
+        "D) $\\frac{5}{12}$"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": "A",
+      "verifierConfidence": "High",
+      "verifierReasoning": "For an angle $\\theta$ in standard position, if its terminal side passes through the point $(x, y)$, the trigonometric functions are defined based on these coordinates. Specifically, the tangent of the angle is defined as $\\tan(\\theta) = \\frac{y}{x}$. In this problem, the given point is $(-5, 12)$. Therefore, we have $x = -5$ and $y = 12$. Substituting these values into the definition for the tangent function, we get: $\\tan(\\theta) = \\frac{12}{-5} = -\\frac{12}{5}$. This corresponds to option A.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Precalculus",
+      "topic": "Unit Circle",
+      "difficulty": "AP Exam Level",
+      "question": "Which of the following statements is true about the point $P(x, y)$ on the unit circle corresponding to an angle $\\theta = \\frac{11\\pi}{3}$?",
+      "options": [
+        "A) $x = -\\frac{1}{2}$ and $y = \\frac{\\sqrt{3}}{2}$",
+        "B) $x = \\frac{1}{2}$ and $y = -\\frac{\\sqrt{3}}{2}$",
+        "C) $x = -\\frac{\\sqrt{3}}{2}$ and $y = -\\frac{1}{2}$",
+        "D) $x = \\frac{\\sqrt{3}}{2}$ and $y = \\frac{1}{2}$"
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": "B",
+      "verifierConfidence": "High",
+      "verifierReasoning": "The point P(x, y) on the unit circle corresponding to an angle θ has coordinates (cos(θ), sin(θ)). We are given the angle θ = 11π/3. First, we find a coterminal angle in the interval [0, 2π) by subtracting multiples of 2π. Since 2π = 6π/3, we can subtract 2π from 11π/3: 11π/3 - 6π/3 = 5π/3. So, the point for 11π/3 is the same as the point for 5π/3. The angle 5π/3 is in the fourth quadrant, because 3π/2 < 5π/3 < 2π. In the fourth quadrant, the x-coordinate (cosine) is positive and the y-coordinate (sine) is negative. The reference angle for 5π/3 is 2π - 5π/3 = π/3. We know that cos(π/3) = 1/2 and sin(π/3) = √3/2. Using the signs for the fourth quadrant, we have: x = cos(11π/3) = cos(5π/3) = +cos(π/3) = 1/2. y = sin(11π/3) = sin(5π/3) = -sin(π/3) = -√3/2. Therefore, the coordinates of the point P are (1/2, -√3/2). This corresponds to option B.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Biology",
+      "topic": "Punnett Squares",
+      "difficulty": "Intermediate",
+      "question": "In pea plants, tallness (T) is dominant over dwarfness (t), and purple flowers (P) are dominant over white flowers (p). If a heterozygous tall, heterozygous purple-flowered pea plant ($TtPp$) is self-pollinated, what is the expected phenotypic ratio of the offspring?",
+      "options": [
+        "A) $9:3:3:1$ (Tall Purple : Tall White : Dwarf Purple : Dwarf White)",
+        "B) $3:1$ (Tall Purple : Dwarf White)",
+        "C) $1:1:1:1$ (Tall Purple : Tall White : Dwarf Purple : Dwarf White)",
+        "D) $9:3:4$ (Tall Purple : Tall White : Dwarf)"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": "A",
+      "verifierConfidence": "High",
+      "verifierReasoning": "This question describes a classic Mendelian dihybrid cross. The parent plant is heterozygous for both traits (TtPp) and is self-pollinated, meaning the cross is TtPp x TtPp. To determine the phenotypic ratio of the offspring, we can consider each trait independently and then combine the probabilities.\n\n1.  **Monohybrid cross for height (Tt x Tt):**\n    *   Genotypes: 1 TT : 2 Tt : 1 tt\n    *   Phenotypes: 3 Tall (T_) : 1 Dwarf (tt). The probability of a tall offspring is 3/4, and the probability of a dwarf offspring is 1/4.\n\n2.  **Monohybrid cross for flower color (Pp x Pp):**\n    *   Genotypes: 1 PP : 2 Pp : 1 pp\n    *   Phenotypes: 3 Purple (P_) : 1 White (pp). The probability of a purple-flowered offspring is 3/4, and the probability of a white-flowered offspring is 1/4.\n\n3.  **Combine the probabilities for the dihybrid phenotypes (assuming independent assortment):**\n    *   **Tall and Purple (T_P_):** P(Tall) × P(Purple) = (3/4) × (3/4) = 9/16\n    *   **Tall and White (T_pp):** P(Tall) × P(White) = (3/4) × (1/4) = 3/16\n    *   **Dwarf and Purple (ttP_):** P(Dwarf) × P(Purple) = (1/4) × (3/4) = 3/16\n    *   **Dwarf and White (ttpp):** P(Dwarf) × P(White) = (1/4) × (1/4) = 1/16\n\nThis gives a phenotypic ratio of 9 (Tall Purple) : 3 (Tall White) : 3 (Dwarf Purple) : 1 (Dwarf White). This is the classic 9:3:3:1 ratio expected from a dihybrid cross between two heterozygous parents.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Biology",
+      "topic": "Punnett Squares",
+      "difficulty": "Intermediate",
+      "question": "In guinea pigs, black fur (B) is dominant over white fur (b), and rough fur (R) is dominant over smooth fur (r). If a male guinea pig with genotype $BbRr$ is crossed with a female guinea pig with genotype $Bbrr$, what is the probability of producing offspring with white, smooth fur ($bbrr$)?",
+      "options": [
+        "A) $1/16$",
+        "B) $1/8$",
+        "C) $1/4$",
+        "D) $1/2$"
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": "B",
+      "verifierConfidence": "High",
+      "verifierReasoning": "This is a dihybrid cross problem. To find the probability of a specific genotype in the offspring, we can consider each trait separately and then multiply the probabilities together, assuming independent assortment. The cross is between a male with genotype BbRr and a female with genotype Bbrr. We want to find the probability of an offspring with genotype bbrr.\n\n1.  **Analyze the fur color trait (B/b):** The cross is Bb x Bb. A Punnett square for this cross yields offspring genotypes BB, Bb, Bb, and bb. The probability of an offspring having the genotype bb is 1/4.\n\n2.  **Analyze the fur texture trait (R/r):** The cross is Rr x rr. A Punnett square for this cross yields offspring genotypes Rr, Rr, rr, and rr. The probability of an offspring having the genotype rr is 2/4, which simplifies to 1/2.\n\n3.  **Combine the probabilities:** To find the probability of an offspring having both the bb genotype AND the rr genotype, we multiply the individual probabilities:\n    P(bbrr) = P(bb) * P(rr) = (1/4) * (1/2) = 1/8.\n\nTherefore, the probability of producing offspring with white, smooth fur (bbrr) is 1/8.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Biology",
+      "topic": "Punnett Squares",
+      "difficulty": "Intermediate",
+      "question": "A Punnett square is a tool used to predict the genotypes and phenotypes of offspring from a genetic cross. Which of the following statements about Punnett squares is INCORRECT?",
+      "options": [
+        "A) They can be used for both monohybrid and dihybrid crosses.",
+        "B) The letters on the top and side of the square represent the gametes produced by each parent.",
+        "C) The ratios predicted by Punnett squares are always observed precisely in small sample sizes.",
+        "D) Each box within the square represents a possible genotype of the offspring."
+      ],
+      "claimedAnswer": "C",
+      "verifiedAnswer": "C",
+      "verifierConfidence": "High",
+      "verifierReasoning": "Punnett squares predict the probable outcomes of a genetic cross, not the certain outcomes. The ratios they generate (e.g., 3:1 phenotypic ratio in a monohybrid cross) are based on probability. Due to random chance, these exact ratios are more likely to be observed in a very large sample size. In small sample sizes, the actual observed ratios can, and often do, deviate significantly from the predicted ratios. Therefore, the statement that the predicted ratios are 'always observed precisely in small sample sizes' is incorrect.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Biology",
+      "topic": "Punnett Squares",
+      "difficulty": "Intermediate",
+      "question": "In a certain species of plant, red flowers (R) are dominant to white flowers (r). A plant with red flowers is crossed with a plant with white flowers. All of the offspring have red flowers. What are the most likely genotypes of the parent plants?",
+      "options": [
+        "A) $RR \times rr$",
+        "B) $Rr \times rr$",
+        "C) $RR \times Rr$",
+        "D) $Rr \times Rr$"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": "A",
+      "verifierConfidence": "High",
+      "verifierReasoning": "The problem describes a cross between a red-flowered plant and a white-flowered plant. Since white flowers are a recessive trait (r), the white-flowered parent must have the genotype rr. The red-flowered parent has a dominant phenotype, so its genotype could be either homozygous dominant (RR) or heterozygous (Rr). The key information is that all of the offspring have red flowers. Let's analyze the possible crosses:\n1. If the red parent is RR, the cross is RR × rr. All offspring will have the genotype Rr and will express the dominant red-flower phenotype. This matches the outcome described in the question.\n2. If the red parent is Rr, the cross is Rr × rr. The offspring would have a 1:1 genotypic ratio (Rr:rr) and a 1:1 phenotypic ratio (red:white). This contradicts the observation that all offspring have red flowers.\nTherefore, the only cross that produces 100% red-flowered offspring from a red and a white parent is RR × rr.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Biology",
+      "topic": "Punnett Squares",
+      "difficulty": "Intermediate",
+      "question": "In a cross between two individuals, $AaBb \times Aabb$, what is the probability of producing offspring with the genotype $A_B_$? (where '_' indicates either allele can be present, as long as it results in the dominant phenotype)?",
+      "options": [
+        "A) $1/8$",
+        "B) $3/8$",
+        "C) $9/16$",
+        "D) $3/4$"
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": "B",
+      "verifierConfidence": "High",
+      "verifierReasoning": "To solve this dihybrid cross problem, we can analyze each gene separately and then combine the probabilities. The cross is AaBb × Aabb. The question asks for the probability of offspring with the genotype A_B_, which means the offspring must have at least one dominant A allele and at least one dominant B allele.\n\n1.  **Analyze the 'A' gene cross:** Aa × Aa.\n    - The possible genotypes for the offspring are AA, Aa, and aa.\n    - The probabilities are P(AA) = 1/4, P(Aa) = 1/2, and P(aa) = 1/4.\n    - The probability of having the dominant phenotype (genotype A_) is P(AA) + P(Aa) = 1/4 + 1/2 = 3/4.\n\n2.  **Analyze the 'B' gene cross:** Bb × bb.\n    - The possible genotypes for the offspring are Bb and bb.\n    - The probabilities are P(Bb) = 1/2 and P(bb) = 1/2.\n    - The probability of having the dominant phenotype (genotype B_) is P(Bb) = 1/2.\n\n3.  **Combine the probabilities:** According to the rule of multiplication for independent events, the probability of an offspring having both the A_ and B_ phenotypes is the product of their individual probabilities.\n    - P(A_B_) = P(A_) × P(B_)\n    - P(A_B_) = (3/4) × (1/2) = 3/8.\n\nTherefore, the probability of producing offspring with the genotype A_B_ is 3/8.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Physics 1",
+      "topic": "Projectile Motion",
+      "difficulty": "Advanced",
+      "question": "A projectile is launched from the ground with an initial velocity of $v_0$ at an angle of $\\theta$ above the horizontal. Assuming negligible air resistance, which of the following statements is true regarding the projectile's motion at the peak of its trajectory?",
+      "options": [
+        "A) The velocity of the projectile is zero.",
+        "B) The horizontal component of the velocity is zero.",
+        "C) The vertical component of the velocity is zero.",
+        "D) The acceleration of the projectile is zero."
+      ],
+      "claimedAnswer": "C",
+      "verifiedAnswer": "C",
+      "verifierConfidence": "High",
+      "verifierReasoning": "The motion of a projectile is analyzed by separating it into independent horizontal and vertical components. In the absence of air resistance, the only force acting on the projectile is gravity, which causes a constant downward acceleration, $g$. This means the acceleration is never zero during the flight (eliminating D). Because there is no horizontal force, the horizontal component of the velocity, $v_x = v_0 \\cos(\\theta)$, remains constant throughout the motion and is not zero (unless $\\theta = 90^\\circ$, which is a vertical launch), eliminating B. The peak of the trajectory is the point of maximum height. At this point, the projectile momentarily stops moving upward before it begins to fall. This means the vertical component of its velocity, $v_y$, is instantaneously zero. Since the horizontal velocity $v_x$ is not zero, the total velocity of the projectile is not zero (eliminating A). Therefore, the only true statement is that the vertical component of the velocity is zero at the peak.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Physics 1",
+      "topic": "Projectile Motion",
+      "difficulty": "Advanced",
+      "question": "A cannonball is fired horizontally from a cliff of height $H$ with an initial speed $v_0$. At the same instant, a second cannonball is dropped from rest from the same height $H$. Which cannonball will hit the ground first, assuming negligible air resistance?",
+      "options": [
+        "A) The fired cannonball.",
+        "B) The dropped cannonball.",
+        "C) Both cannonballs will hit the ground at the same time.",
+        "D) It depends on the initial speed $v_0$ of the fired cannonball."
+      ],
+      "claimedAnswer": "C",
+      "verifiedAnswer": "C",
+      "verifierConfidence": "High",
+      "verifierReasoning": "The key principle here is the independence of horizontal and vertical motion in projectile physics (assuming negligible air resistance). The time an object takes to fall to the ground is determined solely by its vertical motion. Let's analyze the vertical motion for both cannonballs. Both start from the same height H. Both have an initial vertical velocity of zero (the first is fired horizontally, so its initial velocity is purely horizontal; the second is dropped from rest). Both are subject to the same constant downward acceleration due to gravity, g. Since the initial vertical position, initial vertical velocity, and vertical acceleration are identical for both cannonballs, they must take the exact same amount of time to travel the vertical distance H and hit the ground. The initial horizontal speed, v0, of the fired cannonball only affects how far it travels horizontally (its range), not the time it is in the air.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Physics 1",
+      "topic": "Projectile Motion",
+      "difficulty": "Advanced",
+      "question": "A projectile is launched from the ground with an initial speed $v_0$ at an angle of $\\theta$ above the horizontal. Its range is $R$. If the projectile is launched with the same initial speed $v_0$ but at an angle of $90^\\circ - \\theta$, what will be its new range, assuming negligible air resistance?",
+      "options": [
+        "A) $R$",
+        "B) $R \\cos^2 \\theta$",
+        "C) $R \\sin^2 \\theta$",
+        "D) $R \\tan \\theta$"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": "A",
+      "verifierConfidence": "High",
+      "verifierReasoning": "The range of a projectile launched from level ground is given by the formula $R = \\frac{v_0^2 \\sin(2\\alpha)}{g}$, where $v_0$ is the initial speed, $\\alpha$ is the launch angle, and $g$ is the acceleration due to gravity. In the first scenario, the launch angle is $\\theta$, so the range is $R = \\frac{v_0^2 \\sin(2\\theta)}{g}$. In the second scenario, the launch angle is $90^\\circ - \\theta$. Let the new range be $R'$. We can calculate $R'$ using the same formula: $R' = \\frac{v_0^2 \\sin(2(90^\\circ - \\theta))}{g}$. Simplifying the argument of the sine function, we get $2(90^\\circ - \\theta) = 180^\\circ - 2\\theta$. So, $R' = \\frac{v_0^2 \\sin(180^\\circ - 2\\theta)}{g}$. Using the trigonometric identity $\\sin(180^\\circ - x) = \\sin(x)$, we have $\\sin(180^\\circ - 2\\theta) = \\sin(2\\theta)$. Therefore, $R' = \\frac{v_0^2 \\sin(2\\theta)}{g}$. This is the same expression as the original range $R$. Thus, the new range is equal to the original range, $R' = R$. This is a known property of projectile motion: for a given initial speed, the range is the same for complementary launch angles.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Physics 1",
+      "topic": "Projectile Motion",
+      "difficulty": "Advanced",
+      "question": "A football is kicked with an initial speed of $20 \\text{ m/s}$ at an angle of $30^\\circ$ above the horizontal. What is the maximum height reached by the football? (Assume $g = 10 \\text{ m/s}^2$ and negligible air resistance.)",
+      "options": [
+        "A) $5 \\text{ m}$",
+        "B) $10 \\text{ m}$",
+        "C) $15 \\text{ m}$",
+        "D) $20 \\text{ m}$"
+      ],
+      "claimedAnswer": "A",
+      "verifiedAnswer": "A",
+      "verifierConfidence": "High",
+      "verifierReasoning": "The problem asks for the maximum height reached by a projectile. This can be solved using kinematic equations for projectile motion. First, we need to find the initial vertical component of the velocity ($v_{0y}$). The initial velocity ($v_0$) is 20 m/s at an angle ($\theta$) of 30°.\n\n1.  Calculate the initial vertical velocity:\n    $v_{0y} = v_0 \times \\sin(\\theta)$\n    $v_{0y} = 20 \\text{ m/s} \\times \\sin(30^\\circ)$\n    Since $\\sin(30^\\circ) = 0.5$,\n    $v_{0y} = 20 \\text{ m/s} \\times 0.5 = 10 \\text{ m/s}$\n\n2.  At the maximum height, the vertical component of the velocity ($v_y$) is momentarily zero.\n\n3.  Use the time-independent kinematic equation to find the maximum height ($H$ or $\\Delta y$):\n    $v_y^2 = v_{0y}^2 + 2a_y \\Delta y$\n    Here, $v_y = 0$, $v_{0y} = 10 \\text{ m/s}$, and the vertical acceleration ($a_y$) is due to gravity, so $a_y = -g = -10 \\text{ m/s}^2$. We are solving for $\\Delta y = H$.\n\n4.  Substitute the values into the equation:\n    $0^2 = (10 \\text{ m/s})^2 + 2(-10 \\text{ m/s}^2)H$\n    $0 = 100 - 20H$\n\n5.  Solve for H:\n    $20H = 100$\n    $H = \\frac{100}{20} \\text{ m}$\n    $H = 5 \\text{ m}$\n\nTherefore, the maximum height reached by the football is 5 m, which corresponds to option A.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP Physics 1",
+      "topic": "Projectile Motion",
+      "difficulty": "Advanced",
+      "question": "A projectile is launched from the origin $(0,0)$ and lands at $(R,0)$. Its time of flight is $T$. What is the average velocity of the projectile during its entire flight?",
+      "options": [
+        "A) $v_{0x}$",
+        "B) $v_{0y}$",
+        "C) $\\frac{R}{T}$ horizontally, $0$ vertically",
+        "D) $\\frac{R}{T}$ horizontally, $\\frac{v_{0y}}{2}$ vertically"
+      ],
+      "claimedAnswer": "C",
+      "verifiedAnswer": "C",
+      "verifierConfidence": "High",
+      "verifierReasoning": "Average velocity is defined as the total displacement divided by the total time elapsed ($\\\\vec{v}_{avg} = \\\\frac{\\\\\\\\Delta \\\\vec{r}}{\\\\\\\\Delta t}$). The projectile starts at the initial position $\\\\vec{r}_i = (0,0)$ and ends at the final position $\\\\vec{r}_f = (R,0)$. The total displacement is the vector from the initial to the final position: $\\\\\\\\Delta \\\\vec{r} = \\\\vec{r}_f - \\\\vec{r}_i = (R,0) - (0,0) = (R,0)$. This displacement has a horizontal component of R and a vertical component of 0. The total time of flight is T. Therefore, the average velocity is $\\\\vec{v}_{avg} = \\\\frac{(R,0)}{T} = (\\\\frac{R}{T}, 0)$. This means the average velocity has a horizontal component of R/T and a vertical component of 0.",
       "structuralIssues": [],
       "answerMismatch": false,
       "flagged": false
@@ -694,17 +396,17 @@
       "subject": "AP US History",
       "topic": "American Revolution",
       "difficulty": "Intermediate",
-      "question": "Which of the following acts passed by the British Parliament after the French and Indian War was specifically designed to raise revenue to help defray the costs of maintaining troops in the colonies?",
+      "question": "Which of the following was the primary reason for the British government's decision to tax the American colonies after the French and Indian War?",
       "options": [
-        "A) The Stamp Act",
-        "B) The Declaratory Act",
-        "C) The Quartering Act",
-        "D) The Townshend Acts"
+        "A) To fund the construction of new colonial infrastructure.",
+        "B) To help pay for the debt incurred during the French and Indian War.",
+        "C) To punish the colonies for their lack of support during the war.",
+        "D) To establish a standing army in the colonies to suppress potential slave revolts."
       ],
-      "claimedAnswer": "A",
-      "verifiedAnswer": "A",
-      "verifierConfidence": "high",
-      "verifierReasoning": "The Stamp Act of 1765 was the first direct tax imposed on the American colonies with the specific, stated purpose of raising revenue to help pay for the British troops stationed there after the French and Indian War.",
+      "claimedAnswer": "B",
+      "verifiedAnswer": "B",
+      "verifierConfidence": "High",
+      "verifierReasoning": "The French and Indian War (the North American theater of the Seven Years' War) was an incredibly expensive conflict that nearly doubled Great Britain's national debt. British policymakers and the public felt that since the war was fought largely to protect the American colonies from French and Native American threats, the colonists should help bear the financial burden of the war debt and the ongoing cost of stationing troops in North America for their defense. This led to a shift in British policy, from laws primarily intended to regulate trade (mercantilism) to laws intended to raise revenue directly from the colonies, such as the Sugar Act of 1764 and the Stamp Act of 1765.",
       "structuralIssues": [],
       "answerMismatch": false,
       "flagged": false
@@ -713,43 +415,77 @@
       "subject": "AP US History",
       "topic": "American Revolution",
       "difficulty": "Intermediate",
-      "question": "The Sons of Liberty were a significant force in the American Revolution primarily because they:",
+      "question": "The Stamp Act of 1765 was met with widespread colonial protest primarily because it:",
       "options": [
-        "A) Successfully negotiated with British officials to repeal unfair taxes.",
-        "B) Organized boycotts and used intimidation to protest British policies.",
-        "C) Served as the primary military force against British troops in early skirmishes.",
-        "D) Drafted the Declaration of Independence and other key revolutionary documents."
+        "A) Significantly raised the price of imported goods, harming colonial merchants.",
+        "B) Imposed an internal tax without the consent of colonial legislatures.",
+        "C) Forced colonists to quarter British soldiers in their homes.",
+        "D) Restricted colonial expansion westward beyond the Appalachian Mountains."
       ],
       "claimedAnswer": "B",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
+      "verifiedAnswer": "B",
+      "verifierConfidence": "High",
+      "verifierReasoning": "The primary colonial objection to the Stamp Act was based on a fundamental constitutional principle: 'no taxation without representation.' The colonists argued that as they had no elected representatives in the British Parliament, Parliament had no right to impose a direct, internal tax on them. They distinguished between 'internal' taxes (like the Stamp Act, on goods and services within the colonies) and 'external' taxes (duties on imported goods, which they viewed as a legitimate way for Parliament to regulate trade). They believed only their own colonial legislatures, where they were represented, could levy internal taxes. Option A is incorrect because the Stamp Act was a tax on printed materials, not a general tariff on imported goods. Option C describes the Quartering Act of 1765, which was a separate grievance. Option D describes the Proclamation of 1763, a different policy that angered colonists seeking to expand westward.",
+      "structuralIssues": [],
       "answerMismatch": false,
-      "flagged": true
+      "flagged": false
     },
     {
       "subject": "AP US History",
       "topic": "American Revolution",
       "difficulty": "Intermediate",
-      "question": "Which of the following best describes the primary argument of Thomas Paine's 'Common Sense'?",
+      "question": "Which of the following actions by the American colonists BEST exemplifies the concept of 'virtual representation' as argued by the British Parliament?",
       "options": [
-        "A) It advocated for reconciliation with Great Britain under certain conditions.",
-        "B) It argued for the inherent superiority of monarchy as a form of government.",
-        "C) It called for immediate independence from British rule and the establishment of a republican government.",
-        "D) It primarily focused on the economic benefits of remaining within the British Empire."
+        "A) The Boston Tea Party, where colonists destroyed British tea to protest taxation.",
+        "B) The formation of the Sons of Liberty to organize resistance against British policies.",
+        "C) The First Continental Congress, where delegates from various colonies met to discuss grievances.",
+        "D) The Committees of Correspondence, which facilitated communication and coordination among colonies."
       ],
       "claimedAnswer": "C",
-      "verifiedAnswer": null,
-      "verifierConfidence": null,
-      "verifierReasoning": null,
-      "structuralIssues": [
-        "missing wrongAnswerHelp for A"
-      ],
+      "verifiedAnswer": "C",
+      "verifierConfidence": "High",
+      "verifierReasoning": "The concept of 'virtual representation' was the British Parliament's justification for taxing the American colonies. They argued that members of Parliament represented the interests of all British subjects, including the colonists, even though the colonists did not directly elect them. The colonists rejected this, demanding 'actual representation' through their own elected officials. The First Continental Congress was a direct and formal response to this issue. It was a meeting of delegates specifically chosen by the colonies to articulate a unified political position against British policies, including taxation without representation. The Congress's very existence as a representative body for the colonies was a practical and political rejection of virtual representation and an assertion of the principle of actual representation. While the other options (A, B, and D) were all important forms of protest and organization against British policies stemming from this disagreement, the First Continental Congress was the most formal and comprehensive political action that directly addressed and exemplified the colonial counter-argument to virtual representation.",
+      "structuralIssues": [],
       "answerMismatch": false,
-      "flagged": true
+      "flagged": false
+    },
+    {
+      "subject": "AP US History",
+      "topic": "American Revolution",
+      "difficulty": "Intermediate",
+      "question": "Thomas Paine's pamphlet, 'Common Sense,' was significant for the American Revolution because it:",
+      "options": [
+        "A) Articulated a legal argument for colonial rights based on English common law.",
+        "B) Persuaded many fence-sitters and Loyalists to support independence from Britain.",
+        "C) Provided a detailed plan for the military strategy of the Continental Army.",
+        "D) Advocated for the immediate abolition of slavery in the newly independent states."
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": "B",
+      "verifierConfidence": "High",
+      "verifierReasoning": "Thomas Paine's 'Common Sense', published in January 1776, was written in clear, simple language that was accessible to a broad audience, not just the educated elite. Its powerful and direct arguments against monarchy and in favor of republican government and independence from Britain were instrumental in shifting public opinion. At the time, many colonists were still uncertain about a complete break with the mother country. Paine's pamphlet effectively galvanized support for the Patriot cause, persuading many who were undecided ('fence-sitters') to embrace the idea of independence. Option A is incorrect because Paine's arguments were based on natural rights and republican principles, not English common law. Option C is incorrect as the pamphlet was a political argument, not a military plan. Option D is incorrect because while Paine was an abolitionist, 'Common Sense' did not focus on the immediate abolition of slavery; its primary goal was to argue for independence.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
+    },
+    {
+      "subject": "AP US History",
+      "topic": "American Revolution",
+      "difficulty": "Intermediate",
+      "question": "The Battle of Saratoga was a turning point in the American Revolution primarily because it:",
+      "options": [
+        "A) Led to the immediate surrender of British forces in North America.",
+        "B) Convinced France to form a military alliance with the United States.",
+        "C) Resulted in the British abandonment of their southern strategy.",
+        "D) Secured control of the Ohio River Valley for the Americans."
+      ],
+      "claimedAnswer": "B",
+      "verifiedAnswer": "B",
+      "verifierConfidence": "High",
+      "verifierReasoning": "The American victory at the Battle of Saratoga was the decisive event that convinced France the colonists could potentially win the war. This led directly to the signing of the Treaty of Alliance in 1778, which brought crucial French military and financial support, including its navy, into the conflict on the American side. This intervention is what truly made Saratoga the major turning point of the war. Option A is incorrect; the war continued for several years until the surrender at Yorktown in 1781. Option C is incorrect because the British shifted to their southern strategy *after* their defeat at Saratoga. Option D is incorrect as Saratoga was fought in New York to control the Hudson River, not the Ohio River Valley.",
+      "structuralIssues": [],
+      "answerMismatch": false,
+      "flagged": false
     }
   ]
 }
