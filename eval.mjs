@@ -58,7 +58,7 @@ const QUESTION_SCHEMA = {
         properties: { A: { type: "STRING" }, B: { type: "STRING" }, C: { type: "STRING" }, D: { type: "STRING" } },
       },
     },
-    required: ["question", "options", "correct", "explanation"],
+    required: ["question", "options", "correct", "explanation", "wrongAnswerHelp"],
   },
 };
 
@@ -92,22 +92,11 @@ If multiple topics are listed above, distribute the questions roughly evenly acr
 
 MATH FORMATTING: For any mathematical expressions, use LaTeX wrapped in single dollar signs, e.g. $\\frac{x^3}{y}$ or $\\log_b(x)$. Do this in the question text, all four options, and the explanations.
 
-IMPORTANT: Return ONLY valid JSON. No markdown, no explanation, just the JSON array.
+Each question needs: question, 4 options labeled "A) ".."D) ", correct letter, explanation, concept, memoryTrick, examTip, and wrongAnswerHelp.
 
-Format:
-[
-  {
-    "id": 1,
-    "question": "question text here",
-    "options": ["A) option1", "B) option2", "C) option3", "D) option4"],
-    "correct": "A",
-    "explanation": "Why A is correct...",
-    "concept": "Key concept to remember",
-    "memoryTrick": "Easy way to remember this",
-    "examTip": "How this shows up on AP exam",
-    "wrongAnswerHelp": { "B": "...", "C": "...", "D": "..." }
-  }
-]`;
+BE CONCISE: explanation max 3 sentences; concept, memoryTrick, examTip, and each wrongAnswerHelp entry max 1 sentence each.
+
+CRITICAL: The correct answer can be ANY letter (A, B, C, or D) - vary it naturally. In wrongAnswerHelp, provide an entry for EACH of the three INCORRECT options. Do not include the correct letter.`;
 }
 
 // ---- Deterministic structural checks (no AI) ----
